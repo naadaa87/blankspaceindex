@@ -1,0 +1,5 @@
+/* BLANK SPACE INDEX */
+Owner: BLANK Inc. (주식회사 블랭크) — vacancy.co.kr
+Contact: spaceblank0100@gmail.com
+Stack: hand-written HTML/CSS/JS, static build (Node), Cloudflare Pages
+Principles: 근거와 한계 병기 / 검증 상태 공개 / 무저장 무료 진단

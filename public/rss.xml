@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"><channel>
+  <title>BLANK SPACE INDEX 자료실</title>
+  <link>https://index.vacancy.co.kr/insights/</link>
+  <description>공실과 임대, 계약을 다루는 글</description>
+  <language>ko</language>
+  <item>
+    <title>평균 공실률의 착시</title>
+    <link>https://index.vacancy.co.kr/insights/average-illusion/</link>
+    <guid isPermaLink="true">https://index.vacancy.co.kr/insights/average-illusion/</guid>
+    <pubDate>Sat, 01 Aug 2026 00:00:00 GMT</pubDate>
+    <description><![CDATA[전국 상가 공실률 13.1%라는 숫자가 감추는 것 — 평균이 아니라 내 공간의 진단이 필요한 이유에 대하여.]]></description>
+  </item>
+  <item>
+    <title>임대료를 내리기 전에 확인할 여덟 가지</title>
+    <link>https://index.vacancy.co.kr/insights/eight-causes/</link>
+    <guid isPermaLink="true">https://index.vacancy.co.kr/insights/eight-causes/</guid>
+    <pubDate>Sat, 01 Aug 2026 00:00:00 GMT</pubDate>
+    <description><![CDATA[공실의 원인은 가격 하나가 아닙니다. 가격·물리·설비·법규·상권·계약·노출·관리 — 여덟 갈래를 먼저 갈라야 하는 이유.]]></description>
+  </item>
+  <item>
+    <title>보증금과 렌트프리까지 계산한 진짜 임대료</title>
+    <link>https://index.vacancy.co.kr/insights/effective-rent/</link>
+    <guid isPermaLink="true">https://index.vacancy.co.kr/insights/effective-rent/</guid>
+    <pubDate>Sat, 01 Aug 2026 00:00:00 GMT</pubDate>
+    <description><![CDATA[명목 임대료가 같아도 실제 부담은 다릅니다. 유효임대료라는 기준이 조건 비교의 착시를 걷어 내는 방법.]]></description>
+  </item>
+  <item>
+    <title>그 자리에 그 업종이 안 되는 이유</title>
+    <link>https://index.vacancy.co.kr/insights/permit-gates/</link>
+    <guid isPermaLink="true">https://index.vacancy.co.kr/insights/permit-gates/</guid>
+    <pubDate>Sat, 01 Aug 2026 00:00:00 GMT</pubDate>
+    <description><![CDATA[용도, 정화조, 주차, 소방, 학교 앞 제한 — 계약서에 도장을 찍기 전에 통과해야 하는 관문들의 이야기.]]></description>
+  </item>
+  <item>
+    <title>우리가 판정 근거를 공개하기로 한 이유</title>
+    <link>https://index.vacancy.co.kr/insights/why-we-disclose/</link>
+    <guid isPermaLink="true">https://index.vacancy.co.kr/insights/why-we-disclose/</guid>
+    <pubDate>Sat, 01 Aug 2026 00:00:00 GMT</pubDate>
+    <description><![CDATA[평가와 실행을 함께 하는 회사가 신뢰를 다루는 방식 — 배지, 공시, 이의 절차에 대한 창간 선언.]]></description>
+  </item>
+</channel></rss>

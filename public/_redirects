@@ -1,0 +1,3 @@
+# SMFI 사이트 이관 시 여기에 301 리다이렉트를 추가합니다 (보충자료 3.2절 매핑표)
+# 예) smfi.vacancy.co.kr 이관은 해당 프로젝트의 _redirects 또는 Bulk Redirects에서 처리
+# /old-path  /new-path  301

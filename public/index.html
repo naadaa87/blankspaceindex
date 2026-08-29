@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BLANK SPACE INDEX — 공간의 가치를, 데이터로 진단합니다</title>
+<meta name="description" content="공간·상업용 부동산 통합 평가 체계 BLANK SPACE INDEX. 왜 그런지, 그래서 무엇을 해야 하는지 — 주소 하나로 3분 진단을 시작해 보세요.">
+<link rel="canonical" href="https://index.vacancy.co.kr/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="BLANK SPACE INDEX">
+<meta property="og:title" content="BLANK SPACE INDEX — 왜 그런지, 그래서 무엇을 해야 하는지">
+<meta property="og:description" content="공간·상업용 부동산 통합 평가 체계 BLANK SPACE INDEX. 왜 그런지, 그래서 무엇을 해야 하는지 — 주소 하나로 3분 진단을 시작해 보세요.">
+<meta property="og:url" content="https://index.vacancy.co.kr/">
+<meta property="og:image" content="https://index.vacancy.co.kr/assets/img/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+    <link rel="icon" type="image/x-icon" sizes="16x16 32x32 48x48" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/pretendard/woff2-dynamic-subset/PretendardVariable.subset.0.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"BLANK SPACE INDEX","alternateName":"주식회사 블랭크 · 공백","url":"https://index.vacancy.co.kr","logo":"https://index.vacancy.co.kr/assets/img/apple-touch-icon.png","email":"spaceblank0100@gmail.com","sameAs":["https://vacancy.co.kr"]}</script>
+<link rel="alternate" type="application/rss+xml" title="BLANK SPACE INDEX 자료실" href="/rss.xml">
+    
+    
+</head>
+<body class="page-home">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="brand" href="/" aria-label="BLANK SPACE INDEX 홈">
+      <span class="brand__mark"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 4.6C6 3.72 6.72 3 7.6 3h8.8c.88 0 1.6.72 1.6 1.6V21l-6-4.05L6 21V4.6Z" fill="currentColor"/></svg></span>
+      <span class="brand__text">
+        <span class="brand__name">BLANK SPACE INDEX</span>
+        <span class="brand__sub">by 공백</span>
+      </span>
+    </a>
+    <nav class="nav" aria-label="주 메뉴">
+      <div class="nav__item">
+      <a class="nav__link" href="/about-index/">지수 체계 <span class="caret"></span></a>
+      <div class="nav-sub"><div class="nav-sub__group"><a href="/about-index/">지수 체계 소개</a></div><div class="nav-sub__group"><div class="nav-sub__label">지금 이용 가능</div><a href="/index/vacancy/">공실 원인 진단</a><a href="/index/rent/">적정임대료 진단</a><a href="/index/business/">영업 가능성 확인</a><a href="/index/smfi/">공간수익화 적합성 평가</a></div><div class="nav-sub__group"><div class="nav-sub__label">준비 중</div><a href="/index/cashflow/" class="is-preparing">현금흐름 진단 <span class="code-tag">준비 중</span></a><a href="/index/facility/" class="is-preparing">시설·설비 상태 점검 <span class="code-tag">준비 중</span></a><a href="/index/tenant/" class="is-preparing">임차인 안정성 진단 <span class="code-tag">준비 중</span></a><a href="/index/value/" class="is-preparing">건물 가치 범위 분석 <span class="code-tag">준비 중</span></a></div></div>
+    </div>
+      <div class="nav__item">
+      <a class="nav__link" href="/products/">상품·가격 <span class="caret"></span></a>
+      <div class="nav-sub"><div class="nav-sub__group"><a href="/products/">상품 안내와 가격</a><a href="/samples/">샘플 결과지</a><a href="/products/onsite/">현장 점검</a><a href="/products/deep/">종합 심층 진단</a><a href="/apply/">신청하기</a></div></div>
+    </div>
+      <div class="nav__item">
+      <a class="nav__link" href="/trust/">신뢰와 검증 <span class="caret"></span></a>
+      <div class="nav-sub"><div class="nav-sub__group"><a href="/trust/">신뢰와 검증</a><a href="/trust/methodology/">방법론</a><a href="/trust/model-cards/">Model Card</a><a href="/trust/validation/">검증 현황</a><a href="/trust/governance/">거버넌스 · 이의와 정정</a><a href="/trust/data/">데이터와 출처</a><a href="/trust/revisions/">개정 이력</a><a href="/verify/">리포트 진위 확인</a><a href="/company/">운영사·신뢰 구조</a></div></div>
+    </div>
+      <div class="nav__item">
+      <a class="nav__link" href="/works/">실적·자료 <span class="caret"></span></a>
+      <div class="nav-sub"><div class="nav-sub__group"><a href="/works/">실적·레퍼런스</a><a href="/insights/">자료실</a><a href="/faq/">자주 묻는 질문</a><a href="/glossary/">용어집</a></div></div>
+    </div>
+      <div class="nav__item">
+      <a class="nav__link" href="/b2b/">B2B·제휴 <span class="caret"></span></a>
+      <div class="nav-sub"><div class="nav-sub__group"><a href="/b2b/#franchise">프랜차이즈 출점 검토</a><a href="/b2b/#broker">중개·자산관리 제휴</a><a href="/b2b/#public">지자체·공공</a><a href="/b2b/#inquiry">제휴 문의</a></div></div>
+    </div>
+    </nav>
+    <a class="btn btn--primary btn--sm header-cta" href="/check/">3분 무료 진단</a>
+    <button class="nav-burger" aria-expanded="false" aria-controls="mobile-menu" aria-label="메뉴 열기">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <button class="mobile-menu__group" aria-expanded="false">지수 체계 <span class="caret"></span></button>
+      <div class="mobile-menu__sub" hidden><a href="/about-index/">지수 체계 소개</a><div class="nav-sub__label">지금 이용 가능</div><a href="/index/vacancy/">공실 원인 진단</a><a href="/index/rent/">적정임대료 진단</a><a href="/index/business/">영업 가능성 확인</a><a href="/index/smfi/">공간수익화 적합성 평가</a><div class="nav-sub__label">준비 중</div><a href="/index/cashflow/" class="is-preparing">현금흐름 진단</a><a href="/index/facility/" class="is-preparing">시설·설비 상태 점검</a><a href="/index/tenant/" class="is-preparing">임차인 안정성 진단</a><a href="/index/value/" class="is-preparing">건물 가치 범위 분석</a></div>
+      <button class="mobile-menu__group" aria-expanded="false">상품·가격 <span class="caret"></span></button>
+      <div class="mobile-menu__sub" hidden><a href="/products/">상품 안내와 가격</a><a href="/samples/">샘플 결과지</a><a href="/products/onsite/">현장 점검</a><a href="/products/deep/">종합 심층 진단</a><a href="/apply/">신청하기</a></div>
+      <button class="mobile-menu__group" aria-expanded="false">신뢰와 검증 <span class="caret"></span></button>
+      <div class="mobile-menu__sub" hidden><a href="/trust/">신뢰와 검증</a><a href="/trust/methodology/">방법론</a><a href="/trust/model-cards/">Model Card</a><a href="/trust/validation/">검증 현황</a><a href="/trust/governance/">거버넌스 · 이의와 정정</a><a href="/trust/data/">데이터와 출처</a><a href="/trust/revisions/">개정 이력</a><a href="/verify/">리포트 진위 확인</a><a href="/company/">운영사·신뢰 구조</a></div>
+      <button class="mobile-menu__group" aria-expanded="false">실적·자료 <span class="caret"></span></button>
+      <div class="mobile-menu__sub" hidden><a href="/works/">실적·레퍼런스</a><a href="/insights/">자료실</a><a href="/faq/">자주 묻는 질문</a><a href="/glossary/">용어집</a></div>
+      <button class="mobile-menu__group" aria-expanded="false">B2B·제휴 <span class="caret"></span></button>
+      <div class="mobile-menu__sub" hidden><a href="/b2b/#franchise">프랜차이즈 출점 검토</a><a href="/b2b/#broker">중개·자산관리 제휴</a><a href="/b2b/#public">지자체·공공</a><a href="/b2b/#inquiry">제휴 문의</a></div>
+      <a class="btn btn--primary mobile-menu__cta" href="/check/">3분 무료 진단</a>
+  </div>
+</header>
+<main id="main">
+
+  <!-- 1. 히어로 -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container hero__inner">
+      <div class="hero__grid">
+        <div>
+          <p class="eyebrow">Blank Space Index · 공간·상업용 부동산 평가 체계</p>
+          <h1 class="h-display" id="hero-title">얼마인지는 많은 서비스가 말합니다.<br>우리는 <em>왜 그런지</em>, 그래서<br><em>무엇을 해야 하는지</em>를 말합니다.</h1>
+          <p class="hero__sub">10년, 340여 개 공간을 직접 만들고 운영해 온 블랭크의 진단 체계입니다. 이 공간, 계속 이대로 둬도 될까요 — 주소 하나로 3분이면 방향이 보입니다.</p>
+          <div class="hero__tags">
+            <span># 데이터 기반 진단</span><span># 근거와 한계 병기</span><span># 검증 상태 공개</span><span># 무저장 무료 진단</span>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn--primary btn--lg" href="/check/">3분 무료 진단 시작하기</a>
+            <a class="btn btn--ghost btn--lg" href="/about-index/">지수 체계 보기</a>
+          </div>
+          <div class="feature-row">
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><ellipse cx="12" cy="5.5" rx="7" ry="2.6"/><path d="M5 5.5v6c0 1.44 3.13 2.6 7 2.6s7-1.16 7-2.6v-6"/><path d="M5 11.5v6c0 1.44 3.13 2.6 7 2.6s7-1.16 7-2.6v-6"/></svg><b>데이터 기반</b><small>공공·시장 데이터 결합</small></div>
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M4.5 17.5a8.5 8.5 0 1 1 15 0"/><path d="m12 14 4.2-4.6"/><circle cx="12" cy="14.5" r="1.6"/></svg><b>정밀한 지수</b><small>지표 기반 평가 체계</small></div>
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5 9 13l3.5 3.5L20 8"/><path d="M15.5 8H20v4.5"/></svg><b>인사이트 제공</b><small>실행 가능한 다음 단계</small></div>
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 5 5.8v5.4c0 4.3 2.9 7.6 7 9.3 4.1-1.7 7-5 7-9.3V5.8L12 3Z"/><path d="m9 11.6 2.2 2.2L15.4 9.6"/></svg><b>검증 공개</b><small>단계 배지로 상태 표시</small></div>
+          </div>
+        </div>
+        <div class="hero__visual">
+          <div class="hero__map" aria-hidden="true"></div>
+          <figure class="hero__photo"><img src="/assets/img/photos/hero-tower.webp" alt="유리 커튼월의 오피스 타워와 저층 상업 시설이 있는 거리" width="464" height="729" fetchpriority="high"></figure>
+          <aside class="scorecard" role="img" aria-label="공간수익화 적합성 평가 결과 화면 예시. 종합 적합 점수와 영역별 점수, 판정이 표시됩니다.">
+            <div class="scorecard__label"><span>공간수익화 적합 점수</span><span class="code-tag">SMFI 2.1</span></div>
+            <div class="scorecard__value">
+              <span class="scorecard__num num">82.4<small>/100</small></span>
+              <span class="verdict">판정 · 적합</span>
+            </div>
+            <div class="scorecard__bars">
+              <div class="scorecard__bar"><em>시장·수요</em><span class="scorecard__track"><span class="scorecard__fill" style="width:86%"></span></span><span class="num">86</span></div><div class="scorecard__bar"><em>입지·접근</em><span class="scorecard__track"><span class="scorecard__fill" style="width:78%"></span></span><span class="num">78</span></div><div class="scorecard__bar"><em>공간·물리</em><span class="scorecard__track"><span class="scorecard__fill" style="width:83%"></span></span><span class="num">83</span></div><div class="scorecard__bar"><em>법규·인허가</em><span class="scorecard__track"><span class="scorecard__fill" style="width:90%"></span></span><span class="num">90</span></div><div class="scorecard__bar"><em>리스크</em><span class="scorecard__track"><span class="scorecard__fill" style="width:72%"></span></span><span class="num">72</span></div>
+            </div>
+            <div class="scorecard__foot"><span>예시 화면 · 실제 데이터가 아닙니다</span><span>Standard 결과지</span></div>
+          </aside>
+        </div>
+      </div>
+    </div>
+    <div class="index-strip" aria-hidden="true">
+      <div class="index-strip__track">
+        <span class="index-strip__item"><b>공실 원인 진단</b>이 공간은 왜 비어 있고, 무엇부터 바꿔야 하는가 <span class="code-tag">SVDI</span></span>
+        <span class="index-strip__item"><b>적정임대료 진단</b>지금 조건이 시장과 맞는가. 재계약 때 얼마를 불러야 하는가 <span class="code-tag">SRVI</span></span>
+        <span class="index-strip__item"><b>영업 가능성 확인</b>이 공간에서 내가 하려는 영업이 합법적으로 가능한가 <span class="code-tag">SCPI</span></span>
+        <span class="index-strip__item"><b>공간수익화 적합성 평가</b>이 공간으로 무엇을 해야 하는가 <span class="code-tag">SMFI</span></span>
+        <span class="index-strip__item"><b>현금흐름 진단</b>이 자산의 순수익은 얼마이고 어디서 새는가 <span class="code-tag">SCFI</span></span>
+        <span class="index-strip__item"><b>시설·설비 상태 점검</b>이 건물·호실을 쓰려면 앞으로 얼마가 더 드는가 <span class="code-tag">SFCI</span></span>
+        <span class="index-strip__item"><b>임차인 안정성 진단</b>이 임차인·업종과 끝까지 갈 수 있는가 <span class="code-tag">STQI</span></span>
+        <span class="index-strip__item"><b>건물 가치 범위 분석</b>이 가격이 시장 범위 어디에 있는가 <span class="code-tag">SAVI</span></span>
+        <span class="index-strip__item"><b>공실 원인 진단</b>이 공간은 왜 비어 있고, 무엇부터 바꿔야 하는가 <span class="code-tag">SVDI</span></span>
+        <span class="index-strip__item"><b>적정임대료 진단</b>지금 조건이 시장과 맞는가. 재계약 때 얼마를 불러야 하는가 <span class="code-tag">SRVI</span></span>
+        <span class="index-strip__item"><b>영업 가능성 확인</b>이 공간에서 내가 하려는 영업이 합법적으로 가능한가 <span class="code-tag">SCPI</span></span>
+        <span class="index-strip__item"><b>공간수익화 적합성 평가</b>이 공간으로 무엇을 해야 하는가 <span class="code-tag">SMFI</span></span>
+        <span class="index-strip__item"><b>현금흐름 진단</b>이 자산의 순수익은 얼마이고 어디서 새는가 <span class="code-tag">SCFI</span></span>
+        <span class="index-strip__item"><b>시설·설비 상태 점검</b>이 건물·호실을 쓰려면 앞으로 얼마가 더 드는가 <span class="code-tag">SFCI</span></span>
+        <span class="index-strip__item"><b>임차인 안정성 진단</b>이 임차인·업종과 끝까지 갈 수 있는가 <span class="code-tag">STQI</span></span>
+        <span class="index-strip__item"><b>건물 가치 범위 분석</b>이 가격이 시장 범위 어디에 있는가 <span class="code-tag">SAVI</span></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. 문제 제기 -->
+  <section class="section section--alt" aria-labelledby="market-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">공실의 시대</p>
+        <h2 class="h1" id="market-title">공실은 더 이상<br>개별 건물의 불운이 아닙니다</h2>
+      </div>
+      <div class="stats">
+        <div class="stat reveal">
+          <span class="stat__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9.5 5.4 4h13.2L20 9.5"/><path d="M4 9.5a2.6 2.6 0 0 0 5.3 0 2.6 2.6 0 0 0 5.4 0 2.6 2.6 0 0 0 5.3 0"/><path d="M5.5 12.5V20h13v-7.5"/><path d="M9.5 20v-4.5h5V20"/></svg></span>
+          <div class="stat__num num">13.1<small>%</small></div>
+          <p class="stat__label">전국 일반상가 공실률</p>
+          <p class="stat__src">한국부동산원 · 2026년 1분기 상업용부동산 임대동향조사<br>전분기 대비 0.3%p 상승</p>
+        </div>
+        <div class="stat reveal">
+          <span class="stat__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><rect x="5" y="3.5" width="14" height="17" rx="1.2"/><path d="M5 15.5h14"/><path d="M9.5 18h5" stroke-width="2"/><path d="M8 7h2M8 10.5h2M14 7h2M14 10.5h2"/></svg></span>
+          <div class="stat__num num">6.5<small>%</small></div>
+          <p class="stat__label">일반상가 1층 공실률</p>
+          <p class="stat__src">한국부동산원 · 2026년 1분기 신규 공표<br>상권 체감을 보여 주는 지표</p>
+        </div>
+        <div class="stat reveal">
+          <span class="stat__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h16"/><path d="M6 20V6.8L12 4l6 2.8V20"/><path d="m9.6 10.4 4.8 4.8M14.4 10.4l-4.8 4.8"/></svg></span>
+          <div class="stat__num num">62.4<small>만 건</small></div>
+          <p class="stat__label">2026년 상반기 자영업 폐업</p>
+          <p class="stat__src">국세청 사업자 등록 현황 인용 보도 · 2026년 7월<br>반기 기준 역대 최고</p>
+        </div>
+      </div>
+      <p class="lead reveal" style="max-width:760px;margin-top:44px;">평균은 방향을 보여 주지만, 결정은 언제나 자산 하나에서 일어납니다. 같은 13.1%라는 숫자 아래에서 어떤 거리는 다시 채워지고, 어떤 건물은 몇 년째 그대로 비어 있습니다. 지금 필요한 것은 시장의 평균이 아니라 <em style="font-style:normal;color:var(--teal);font-weight:600;">내 공간이 왜 그런지에 대한 진단</em>입니다.</p>
+    </div>
+  </section>
+
+  <!-- 3. 정체 선언 + 파이프라인 구조 -->
+  <section class="section" aria-labelledby="identity-title">
+    <div class="container">
+      <div class="grid-2" style="display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:56px;align-items:center;">
+        <div class="reveal">
+          <p class="eyebrow">조회가 아니라 진단</p>
+          <h2 class="h1" id="identity-title">시세를 보여 주는 서비스는<br>이미 많습니다</h2>
+          <p class="lead">저희가 만드는 것은 그 다음입니다. 왜 비어 있는지, 지금 조건이 시장과 맞는지, 이 자리에서 그 영업이 되는지 — 결정에 필요한 판단을 지수로 만들고, 모든 결과에 근거와 한계를 함께 적습니다.</p>
+          <p class="muted" style="margin-top:14px;">판정을 흐리면서 판매를 올리는 장치는 이 사이트에 없습니다. 확인하지 못한 것은 확인하지 못했다고 쓰는 것이 이 체계의 방식입니다.</p>
+          <a class="link-arrow" href="/about-index/">체계가 만들어진 방식 보기</a>
+        </div>
+        <figure class="layer-figure reveal">
+          
+<svg viewBox="0 0 560 348" role="img" aria-label="공간수익화 적합성 평가의 다섯 단계 파이프라인 구조도" style="width:100%;height:auto;display:block;">
+  <defs>
+    <linearGradient id="lg5" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0F6B63"/><stop offset="1" stop-color="#128074"/>
+    </linearGradient>
+  </defs>
+  
+  <g>
+    <path d="M 40 48 L 150 26 L 260 48 L 150 70 Z" fill="#EAF1EF" stroke="#D5E2DE" stroke-width="1.2"/>
+    <path d="M 40 48 L 40 60 L 150 82 L 150 70 Z" fill="#EAF1EF" stroke="#D5E2DE" stroke-width="1.2" opacity="0.75"/>
+    <path d="M 260 48 L 260 60 L 150 82 L 150 70 Z" fill="#EAF1EF" stroke="#D5E2DE" stroke-width="1.2" opacity="0.55"/>
+    <line x1="268" y1="52" x2="300" y2="52" stroke="#C9D4D1" stroke-width="1.2" stroke-dasharray="3 3"/>
+    <text x="310" y="46" font-family="Archivo, sans-serif" font-size="10.5" font-weight="700" letter-spacing="1.5" fill="#0F6B63">01</text>
+    <text x="336" y="47" font-family="Pretendard Variable, sans-serif" font-size="14.5" font-weight="700" fill="#1D2327">데이터 적정성 확인</text>
+    <text x="310" y="66" font-family="Pretendard Variable, sans-serif" font-size="12" fill="#64707A">입력·증빙의 품질 게이트</text>
+  </g>
+  <g>
+    <path d="M 40 110 L 150 88 L 260 110 L 150 132 Z" fill="#D9E9E4" stroke="#C2DAD3" stroke-width="1.2"/>
+    <path d="M 40 110 L 40 122 L 150 144 L 150 132 Z" fill="#D9E9E4" stroke="#C2DAD3" stroke-width="1.2" opacity="0.75"/>
+    <path d="M 260 110 L 260 122 L 150 144 L 150 132 Z" fill="#D9E9E4" stroke="#C2DAD3" stroke-width="1.2" opacity="0.55"/>
+    <line x1="268" y1="114" x2="300" y2="114" stroke="#C9D4D1" stroke-width="1.2" stroke-dasharray="3 3"/>
+    <text x="310" y="108" font-family="Archivo, sans-serif" font-size="10.5" font-weight="700" letter-spacing="1.5" fill="#0F6B63">02</text>
+    <text x="336" y="109" font-family="Pretendard Variable, sans-serif" font-size="14.5" font-weight="700" fill="#1D2327">하드게이트 12개</text>
+    <text x="310" y="128" font-family="Pretendard Variable, sans-serif" font-size="12" fill="#64707A">결격 사유 선별 — 위음성 최소화</text>
+  </g>
+  <g>
+    <path d="M 40 172 L 150 150 L 260 172 L 150 194 Z" fill="#B9D8CE" stroke="#A0C9BC" stroke-width="1.2"/>
+    <path d="M 40 172 L 40 184 L 150 206 L 150 194 Z" fill="#B9D8CE" stroke="#A0C9BC" stroke-width="1.2" opacity="0.75"/>
+    <path d="M 260 172 L 260 184 L 150 206 L 150 194 Z" fill="#B9D8CE" stroke="#A0C9BC" stroke-width="1.2" opacity="0.55"/>
+    <line x1="268" y1="176" x2="300" y2="176" stroke="#C9D4D1" stroke-width="1.2" stroke-dasharray="3 3"/>
+    <text x="310" y="170" font-family="Archivo, sans-serif" font-size="10.5" font-weight="700" letter-spacing="1.5" fill="#0F6B63">03</text>
+    <text x="336" y="171" font-family="Pretendard Variable, sans-serif" font-size="14.5" font-weight="700" fill="#1D2327">10개 영역 · 57개 지표</text>
+    <text x="310" y="190" font-family="Pretendard Variable, sans-serif" font-size="12" fill="#64707A">입지·수요·물리·법규·운영 평가</text>
+  </g>
+  <g>
+    <path d="M 40 234 L 150 212 L 260 234 L 150 256 Z" fill="#7FB8A6" stroke="#69A997" stroke-width="1.2"/>
+    <path d="M 40 234 L 40 246 L 150 268 L 150 256 Z" fill="#7FB8A6" stroke="#69A997" stroke-width="1.2" opacity="0.75"/>
+    <path d="M 260 234 L 260 246 L 150 268 L 150 256 Z" fill="#7FB8A6" stroke="#69A997" stroke-width="1.2" opacity="0.55"/>
+    <line x1="268" y1="238" x2="300" y2="238" stroke="#C9D4D1" stroke-width="1.2" stroke-dasharray="3 3"/>
+    <text x="310" y="232" font-family="Archivo, sans-serif" font-size="10.5" font-weight="700" letter-spacing="1.5" fill="#0F6B63">04</text>
+    <text x="336" y="233" font-family="Pretendard Variable, sans-serif" font-size="14.5" font-weight="700" fill="#1D2327">14개 모델 적합도</text>
+    <text x="310" y="252" font-family="Pretendard Variable, sans-serif" font-size="12" fill="#64707A">용도별 사업 모델 매칭</text>
+  </g>
+  <g>
+    <path d="M 40 296 L 150 274 L 260 296 L 150 318 Z" fill="url(#lg5)" stroke="#0B554E" stroke-width="1.2"/>
+    <path d="M 40 296 L 40 308 L 150 330 L 150 318 Z" fill="url(#lg5)" stroke="#0B554E" stroke-width="1.2" opacity="0.75"/>
+    <path d="M 260 296 L 260 308 L 150 330 L 150 318 Z" fill="url(#lg5)" stroke="#0B554E" stroke-width="1.2" opacity="0.55"/>
+    <line x1="268" y1="300" x2="300" y2="300" stroke="#C9D4D1" stroke-width="1.2" stroke-dasharray="3 3"/>
+    <text x="310" y="294" font-family="Archivo, sans-serif" font-size="10.5" font-weight="700" letter-spacing="1.5" fill="#0F6B63">05</text>
+    <text x="336" y="295" font-family="Pretendard Variable, sans-serif" font-size="14.5" font-weight="700" fill="#1D2327">경제성 검증</text>
+    <text x="310" y="314" font-family="Pretendard Variable, sans-serif" font-size="12" fill="#64707A">수익 구조의 성립 확인</text>
+  </g>
+</svg>
+          <figcaption>공간수익화 적합성 평가(SMFI 2.1)의 5단계 파이프라인 — 모든 본 평가가 이 구조를 통과합니다</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. 지수 카드 그리드 -->
+  <section class="section section--alt" aria-labelledby="index-title">
+    <div class="container">
+      <div class="section-head section-head--row reveal">
+        <div>
+          <p class="eyebrow">여덟 개의 질문</p>
+          <h2 class="h1" id="index-title">지수의 이름은 코드가 아니라 질문입니다</h2>
+          <p class="lead">지금 이용할 수 있는 네 가지와 준비 중인 네 가지를 그대로 보여 드립니다. 검증되지 않은 지수에 이름을 붙여 내보내지 않는 것도 이 체계의 원칙입니다.</p>
+        </div>
+        <a class="btn btn--ghost" href="/about-index/">지수 체계 소개 →</a>
+      </div>
+      <div class="index-grid">
+        <a class="index-card reveal" href="/index/vacancy/">
+        <div class="index-card__top">
+          <span class="index-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V21"/><path d="M12 21v-3"/><path d="M12 14 4 8.5M12 14l-6-1M12 14l-5 3.5M12 14l8-5.5M12 14l6-1M12 14l5 3.5"/><circle cx="13.6" cy="12" r="0.9" fill="#16A34A" stroke="none"/></svg></span>
+          <span class="chip">이용 가능</span>
+        </div>
+        <div>
+          <h3 class="index-card__q">이 공간은 왜 비어 있고, 무엇부터 바꿔야 하는가</h3>
+          <p class="index-card__name">공실 원인 진단 <span class="code-tag">SVDI 1.1</span></p>
+        </div>
+        <p class="index-card__desc">비어 있는 이유를 가격·물리·설비·법규·상권·계약·노출·관리의 여덟 갈래로 나눠 확인하고, 무엇부터 바꿀지 순서를 잡아 드립니다.</p>
+        <div class="index-card__foot">
+          <span class="badge badge--expert">Expert-designed</span>
+          <span class="index-card__cta">진단 보기</span>
+        </div>
+      </a>
+        <a class="index-card reveal" href="/index/rent/">
+        <div class="index-card__top">
+          <span class="index-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M3 14h18"/><path d="M5 14v-2.5M9 14v-2.5M13 14v-2.5M17 14v-2.5M21 14v-2.5"/><path d="M7 14v-4.2M15 14v-4.2"/><path d="M11 19.5v-2" stroke="#16A34A"/><path d="M9.6 19.5h2.8" stroke="#16A34A"/><circle cx="11" cy="16" r="1.4" stroke="#16A34A"/></svg></span>
+          <span class="chip">이용 가능</span>
+        </div>
+        <div>
+          <h3 class="index-card__q">지금 조건이 시장과 맞는가. 재계약 때 얼마를 불러야 하는가</h3>
+          <p class="index-card__name">적정임대료 진단 <span class="code-tag">SRVI 2.1</span></p>
+        </div>
+        <p class="index-card__desc">보증금과 렌트프리까지 반영한 실질 임대 조건을 시장 범위 위에 올려놓고, 지금 조건이 어디쯤인지 확인합니다.</p>
+        <div class="index-card__foot">
+          <span class="badge badge--expert">Expert-designed</span>
+          <span class="index-card__cta">진단 보기</span>
+        </div>
+      </a>
+        <a class="index-card reveal" href="/index/business/">
+        <div class="index-card__top">
+          <span class="index-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20v-8a2.5 2.5 0 0 1 5 0v8"/><path d="M9.5 20v-9a2.5 2.5 0 0 1 5 0v9"/><path d="M16 20v-10a2.5 2.5 0 0 1 5 0v10"/><path d="M2 20h21"/><path d="m17.6 6.6 1.3 1.3 2.1-2.4" stroke="#16A34A"/></svg></span>
+          <span class="chip">이용 가능</span>
+        </div>
+        <div>
+          <h3 class="index-card__q">이 공간에서 내가 하려는 영업이 합법적으로 가능한가</h3>
+          <p class="index-card__name">영업 가능성 확인 <span class="code-tag">SCPI 1.1</span></p>
+        </div>
+        <p class="index-card__desc">용도부터 정화조·주차·소방·학교 앞 제한까지 여덟 관문을 차례로 확인하고, 확정할 수 없는 것은 확인 필요로 정직하게 남깁니다.</p>
+        <div class="index-card__foot">
+          <span class="badge badge--expert">Expert-designed</span>
+          <span class="index-card__cta">진단 보기</span>
+        </div>
+      </a>
+        <a class="index-card reveal" href="/index/smfi/">
+        <div class="index-card__top">
+          <span class="index-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="13" height="13" rx="1"/><path d="M3 9h13M9 3v13"/><rect x="8" y="8" width="13" height="13" rx="1"/><path d="m11.8 14.6 2 2 3.4-4" stroke="#16A34A"/></svg></span>
+          <span class="chip">이용 가능</span>
+        </div>
+        <div>
+          <h3 class="index-card__q">이 공간으로 무엇을 해야 하는가</h3>
+          <p class="index-card__name">공간수익화 적합성 평가 <span class="code-tag">SMFI 2.1</span></p>
+        </div>
+        <p class="index-card__desc">결격 조건과 열 개 영역의 검증을 거쳐 열네 가지 수익 모델의 적합도를 판정하고, 손익분기까지 확인한 답을 드립니다.</p>
+        <div class="index-card__foot">
+          <span class="badge badge--expert">Expert-designed</span>
+          <span class="index-card__cta">본 평가 보기</span>
+        </div>
+      </a>
+        <a class="index-card index-card--preparing reveal" href="/index/cashflow/">
+        <div class="index-card__top">
+          <span class="index-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v16M4 20h16"/><path d="M4 9h5l-1.6-1.6M9 9 7.4 10.6"/><path d="M20 12h-5l1.6-1.6M15 12l1.6 1.6"/><circle cx="12" cy="4" r="1.2" stroke="#16A34A"/></svg></span>
+          <span class="chip chip--muted">준비 중</span>
+        </div>
+        <div>
+          <h3 class="index-card__q">이 자산의 순수익은 얼마이고 어디서 새는가</h3>
+          <p class="index-card__name">현금흐름 진단</p>
+        </div>
+        <p class="index-card__desc">임대 수입과 나가는 비용을 한 장 위에 올려, 순수익의 구조와 새는 지점을 확인하는 진단으로 준비하고 있습니다.</p>
+        <div class="index-card__foot">
+          <span class="badge badge--expert">Expert-designed</span>
+          <span class="index-card__cta">소개·출시 알림</span>
+        </div>
+      </a>
+        <a class="index-card index-card--preparing reveal" href="/index/facility/">
+        <div class="index-card__top">
+          <span class="index-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V5.5L11 3v18"/><path d="M4 9h7M4 13h7M4 17h7"/><path d="M11 21h9"/><circle cx="16.5" cy="12.5" r="3.2" stroke="#16A34A"/><path d="m18.8 14.8 2.7 2.7" stroke="#16A34A"/></svg></span>
+          <span class="chip chip--muted">준비 중</span>
+        </div>
+        <div>
+          <h3 class="index-card__q">이 건물·호실을 쓰려면 앞으로 얼마가 더 드는가</h3>
+          <p class="index-card__name">시설·설비 상태 점검</p>
+        </div>
+        <p class="index-card__desc">설비의 상태와 남은 수명을 점검해, 앞으로 필요한 지출의 구간을 미리 확인하는 진단으로 준비하고 있습니다.</p>
+        <div class="index-card__foot">
+          <span class="badge badge--expert">Expert-designed</span>
+          <span class="index-card__cta">소개·출시 알림</span>
+        </div>
+      </a>
+        <a class="index-card index-card--preparing reveal" href="/index/tenant/">
+        <div class="index-card__top">
+          <span class="index-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h18M5 7V4h14v3"/><rect x="5" y="11" width="6" height="4.5"/><rect x="13" y="11" width="6" height="4.5"/><rect x="9" y="15.5" width="6" height="4.5" stroke="#16A34A"/><path d="M3 20h18"/></svg></span>
+          <span class="chip chip--muted">준비 중</span>
+        </div>
+        <div>
+          <h3 class="index-card__q">이 임차인·업종과 끝까지 갈 수 있는가</h3>
+          <p class="index-card__name">임차인 안정성 진단</p>
+        </div>
+        <p class="index-card__desc">업종의 계속성과 임차 구성의 안정성을 함께 보는 진단으로 준비하고 있습니다.</p>
+        <div class="index-card__foot">
+          <span class="badge badge--expert">Expert-designed</span>
+          <span class="index-card__cta">소개·출시 알림</span>
+        </div>
+      </a>
+        <a class="index-card index-card--preparing reveal" href="/index/value/">
+        <div class="index-card__top">
+          <span class="index-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M5 17V8M3.6 8h2.8M3.6 17h2.8"/><path d="M12 20V5M10.6 5h2.8M10.6 20h2.8"/><path d="M19 15v-5M17.6 10h2.8M17.6 15h2.8"/><circle cx="12" cy="12.5" r="1.1" fill="#16A34A" stroke="none"/></svg></span>
+          <span class="chip chip--muted">준비 중</span>
+        </div>
+        <div>
+          <h3 class="index-card__q">이 가격이 시장 범위 어디에 있는가</h3>
+          <p class="index-card__name">건물 가치 범위 분석</p>
+        </div>
+        <p class="index-card__desc">매입 검토 리포트 안에서만 제공되는 범위 분석입니다. 확정 가격이 아니라 시장 범위 위의 위치를 봅니다.</p>
+        <div class="index-card__foot">
+          <span class="badge badge--expert">Expert-designed</span>
+          <span class="index-card__cta">소개·출시 알림</span>
+        </div>
+      </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. 작동 방식 -->
+  <section class="section" aria-labelledby="how-title">
+    <div class="container">
+      <div class="section-head section-head--center reveal">
+        <p class="eyebrow" style="justify-content:center;">작동 방식</p>
+        <h2 class="h1" id="how-title">무료가 문제를 드러내고, <em>실행이 해결합니다</em></h2>
+        <p class="lead">어느 단계에 있든 자기 자리와 다음 단계가 보이도록 만들었습니다.</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal">
+          <span class="step__circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.2"/><path d="m15.6 15.6 4 4"/><path d="M8.5 11h5M11 8.5v5"/></svg></span>
+          <span class="step__no">STEP 1</span>
+          <h3 class="step__name">무료 진단</h3>
+          <p class="step__out">방향과 위험 신호, 확인되지 않은 항목</p>
+          <span class="step__time num">3분 · 무료</span>
+        </div>
+        <div class="step reveal">
+          <span class="step__circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><rect x="5" y="3.5" width="14" height="17" rx="1.6"/><path d="M8.5 8h7M8.5 11.5h7"/><path d="m9 16.4 1.7 1.7 3.4-3.4"/></svg></span>
+          <span class="step__no">STEP 2</span>
+          <h3 class="step__name">셀프 진단</h3>
+          <p class="step__out">즉시 계산되는 결과지</p>
+          <span class="step__time num">5분 내외 · Standard</span>
+        </div>
+        <div class="step reveal">
+          <span class="step__circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.4"/><path d="M5.5 20a6.5 6.5 0 0 1 13 0"/><path d="m14.6 12.9 1.3 1.3 2.6-2.6" stroke="#16A34A"/></svg></span>
+          <span class="step__no">STEP 3</span>
+          <h3 class="step__name">전문가 진단</h3>
+          <p class="step__out">검토·서명이 들어간 리포트</p>
+          <span class="step__time num">영업일 3~10일 · Pro</span>
+        </div>
+        <div class="step reveal">
+          <span class="step__circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.4-6.5-10A6.5 6.5 0 0 1 12 4.5 6.5 6.5 0 0 1 18.5 11c0 4.6-6.5 10-6.5 10Z"/><circle cx="12" cy="10.8" r="2.2"/></svg></span>
+          <span class="step__no">STEP 4</span>
+          <h3 class="step__name">현장 점검</h3>
+          <p class="step__out">실측과 사진 증빙으로 확정</p>
+          <span class="step__time num">방문 후 5일</span>
+        </div>
+        <div class="step step--em reveal">
+          <span class="step__circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 20.5V9.8L12 4l7 5.8v10.7"/><path d="M9.5 20.5v-5h5v5"/><path d="M3.5 20.5h17"/></svg></span>
+          <span class="step__no">STEP 5</span>
+          <h3 class="step__name">실행</h3>
+          <p class="step__out">개선·시공·오픈·운영</p>
+          <span class="step__time num">진단 비용 공제</span>
+        </div>
+      </div>
+      <div class="notice steps__note reveal">
+        <p><strong>진단 비용은 사라지지 않습니다.</strong> 셀프 진단(Standard) 결제액은 같은 지수의 전문가 진단(Pro)으로 전환할 때 전액 공제되고, 유료 진단 비용은 이후 블랭크와 개선·시공·운영 프로젝트를 계약할 때 공제됩니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. 신뢰 장치 -->
+  <section class="section section--alt" aria-labelledby="trust-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">신뢰의 구조</p>
+        <h2 class="h1" id="trust-title">신뢰는 주장 대신 <em>구조로</em></h2>
+        <p class="lead">설계부터 검증까지의 과정 자체를 공개합니다. 모든 지수에는 지금 어느 검증 단계에 있는지가 붙고, 배지를 누르면 각 단계의 뜻을 볼 수 있습니다.</p>
+      </div>
+      <div class="badge-cards">
+        <div class="badge-card reveal">
+          <span class="badge-card__ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.2"/><path d="M12 3.8v4.4M12 15.8v4.4M3.8 12h4.4M15.8 12h4.4"/><circle cx="12" cy="12" r="2"/></svg></span>
+          <span class="badge-card__stage">Stage 1 · Expert-designed</span>
+          <h3>전문가 설계</h3>
+          <p>10년의 실행 경험과 공인 방법론으로 설계된 단계입니다. 오픈 시점의 모든 지수가 여기서 출발하며, 결과는 범위와 신호로 말합니다.</p>
+          <button type="button" class="badge badge--expert" data-badge="expert" title="전문가 설계 — 설명 보기">Expert-designed</button>
+        </div>
+        <div class="badge-card badge-card--pilot reveal">
+          <span class="badge-card__ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M4.5 17.5a8.5 8.5 0 1 1 15 0"/><path d="m12 14 4.2-4.6"/><circle cx="12" cy="14.5" r="1.6"/></svg></span>
+          <span class="badge-card__stage">Stage 2 · Pilot-calibrated</span>
+          <h3>파일럿 보정</h3>
+          <p>실제 사례 표본으로 1차 보정을 마친 단계입니다. 보정에 사용된 표본의 성격과 규모를 검증 현황 페이지에 공개합니다.</p>
+          <button type="button" class="badge badge--pilot" data-badge="pilot" title="파일럿 보정 — 설명 보기">Pilot-calibrated</button>
+        </div>
+        <div class="badge-card badge-card--backtested reveal">
+          <span class="badge-card__ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 5 5.8v5.4c0 4.3 2.9 7.6 7 9.3 4.1-1.7 7-5 7-9.3V5.8L12 3Z"/><path d="m9 11.6 2.2 2.2L15.4 9.6"/></svg></span>
+          <span class="badge-card__stage">Stage 3 · Backtested</span>
+          <h3>실증 검증</h3>
+          <p>홀드아웃 검증을 통과해 성능 요약을 공개하는 단계입니다. 검증이 쌓이는 과정이 사이트에 그대로 반영됩니다.</p>
+          <button type="button" class="badge badge--backtested" data-badge="backtested" title="실증 검증 — 설명 보기">Backtested</button>
+        </div>
+      </div>
+      <div class="tile-grid">
+        <div class="tile reveal">
+          <span class="tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="14" rx="1.6"/><path d="M7 9h6M7 12.2h10M7 15.4h8"/></svg></span>
+          <h3>지수마다 Model Card를 공개합니다</h3>
+          <p>목적과 적용 범위, 사용하는 데이터, 한계, 검증 상태, 버전 이력을 지수마다 한 장으로 정리합니다. 무엇을 계산하고 무엇을 계산하지 않는지를 먼저 밝히는 문서입니다.</p>
+          <a class="link-arrow" href="/trust/model-cards/">Model Card 보기</a>
+        </div>
+        <div class="tile reveal">
+          <span class="tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 12S6 5.8 12 5.8 21.5 12 21.5 12 18 18.2 12 18.2 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="2.6"/></svg></span>
+          <h3>확인하지 못한 것은 확인하지 못했다고 씁니다</h3>
+          <p>원격 진단이 닿지 못한 항목은 숨기지 않고 확인 불가, 현장 확인 필요로 결과에 그대로 적습니다. 이 정직한 표기가 다음 단계의 안내이기도 합니다.</p>
+          <a class="link-arrow" href="/trust/methodology/">방법론 보기</a>
+        </div>
+        <div class="tile reveal">
+          <span class="tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.2"/><path d="M12 3.8v4.4M12 15.8v4.4M3.8 12h4.4M15.8 12h4.4"/><circle cx="12" cy="12" r="2"/></svg></span>
+          <h3>검증 현황을 수치로 공개합니다</h3>
+          <p>지수별 검증 단계, 보정 표본, 성능 요약을 대시보드로 공개할 예정입니다. 검증 전의 수치는 확정형으로 말하지 않습니다.</p>
+          <a class="link-arrow" href="/trust/validation/">검증 현황 보기</a>
+        </div>
+        <div class="tile reveal">
+          <span class="tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v16M7.5 20h9"/><path d="M12 6.5 5.5 8m6.5-1.5L18.5 8"/><path d="M3.4 13.2 5.5 8l2.1 5.2a3 3 0 0 1-4.2 0ZM16.4 13.2 18.5 8l2.1 5.2a3 3 0 0 1-4.2 0Z"/></svg></span>
+          <h3>이해상충을 먼저 공시합니다</h3>
+          <p>평가하는 회사가 실행도 한다는 구조를 숨기지 않습니다. 판정은 이후 수주 여부와 무관하게 바뀌지 않고, 고객은 평가 근거를 열람할 수 있습니다.</p>
+          <a class="link-arrow" href="/company/">운영사·신뢰 구조 보기</a>
+        </div>
+      </div>
+      <div class="quote-bar reveal">
+        <span class="quote-bar__mark">“</span>
+        <p>확인되지 않은 항목이 남아 있다면, 그 사실이 결과지에 그대로 적힙니다.<small>BLANK SPACE INDEX 운영 원칙 · 리포트 공통 규격</small></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. 실적 -->
+  <section class="section" aria-labelledby="track-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">실행의 기록</p>
+        <h2 class="h1" id="track-title">평가만 하는 회사가 아니라,<br>만들어 온 회사입니다</h2>
+        <p class="lead">2015년부터 비어 있는 공간을 직접 기획하고 짓고 운영해 왔습니다. 이 지수들은 그 현장에서 나온 질문으로 설계되었습니다.</p>
+      </div>
+      <div class="metric-grid">
+        <div class="metric reveal">
+          <div class="metric__lbl"><span class="lbl">Experience</span></div>
+          <div class="metric__num num">10<small>년+</small></div>
+          <p class="metric__sub"><b style="color:var(--ink);font-weight:600;">직접 수행</b><br>2015년부터</p>
+        </div>
+        <div class="metric reveal">
+          <div class="metric__lbl"><span class="lbl">Spaces</span></div>
+          <div class="metric__num num">340<small>+</small></div>
+          <p class="metric__sub"><b style="color:var(--ink);font-weight:600;">직접 기획·개발·운영한 공간</b><br>전환 기획부터 운영까지</p>
+        </div>
+        <div class="metric reveal">
+          <div class="metric__lbl"><span class="lbl">Branches</span></div>
+          <div class="metric__num num">약 120<small>개</small></div>
+          <p class="metric__sub"><b style="color:var(--ink);font-weight:600;">쏘플파티룸 전국 지점</b><br>직접 만든 브랜드</p>
+        </div>
+        <div class="metric reveal">
+          <div class="metric__lbl"><span class="lbl">Performance</span></div>
+          <div class="metric__num num">3.4~5.8<small>배</small></div>
+          <p class="metric__sub"><b style="color:var(--ink);font-weight:600;">사례 성과 · 월평균 매출 기준</b><br>아래 각주 기준</p>
+        </div>
+      </div>
+      <p class="metric-footnote reveal">표기된 사례 성과는 공실 당시 기대 임대료 대비 개발 후 월평균 매출 기준입니다. 상세 산정 기간은 상담을 통해 안내해 드립니다.</p>
+    </div>
+  </section>
+
+  <!-- 8. 사례 미리보기 -->
+  <section class="section section--alt" aria-labelledby="case-title">
+    <div class="container">
+      <div class="section-head section-head--row reveal">
+        <div>
+          <p class="eyebrow">Case Studies</p>
+          <h2 class="h1" id="case-title">데이터로 진단하고, <em>실행으로 증명합니다</em></h2>
+          <p class="lead">사례는 익명 원칙으로 소개합니다. 진단 체계를 거친 사례는 동의를 얻는 대로 이 자리에 더해 갑니다.</p>
+        </div>
+        <a class="btn btn--ghost" href="/works/">전체 사례 보기 →</a>
+      </div>
+      <div class="case-grid">
+        <article class="case-card reveal">
+          <div class="case-card__media">
+            <img src="/assets/img/photos/case-retail.webp" alt="" loading="lazy" width="820" height="434">
+            <span class="case-card__no num">01</span>
+          </div>
+          <div class="case-card__body">
+            <span class="case-card__cat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9.5 5.4 4h13.2L20 9.5"/><path d="M4 9.5a2.6 2.6 0 0 0 5.3 0 2.6 2.6 0 0 0 5.4 0 2.6 2.6 0 0 0 5.3 0"/><path d="M5.5 12.5V20h13v-7.5"/><path d="M9.5 20v-4.5h5V20"/></svg><span class="lbl" style="color:var(--teal);">RETAIL → PARTYROOM</span></span>
+            <h3>임대 문의가 끊긴 1층 근생, 모임 공간으로</h3>
+            <p class="case-card__desc">오래 비어 있던 1층 구획의 원인을 진단해 용도를 바꾸고, 파티룸으로 기획·시공한 뒤 직접 운영 체계에 올렸습니다.</p>
+            <div class="case-card__foot">
+              <div class="case-card__metric"><b>약 120개 지점</b><span>쏘플파티룸 · 전국 직접 운영</span></div>
+              <span class="case-card__brand">SSOFLE PARTYROOM</span>
+            </div>
+          </div>
+        </article>
+        <article class="case-card reveal">
+          <div class="case-card__media">
+            <img src="/assets/img/photos/case-asset.webp" alt="" loading="lazy" width="820" height="434">
+            <span class="case-card__no num">02</span>
+          </div>
+          <div class="case-card__body">
+            <span class="case-card__cat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><rect x="5" y="3.5" width="14" height="17" rx="1.2"/><path d="M5 15.5h14"/><path d="M9.5 18h5" stroke-width="2"/><path d="M8 7h2M8 10.5h2M14 7h2M14 10.5h2"/></svg><span class="lbl" style="color:var(--teal);">UPPER FLOOR → BOOKING</span></span>
+            <h3>쓰임이 애매했던 상층부, 예약 기반 공간으로</h3>
+            <p class="case-card__desc">접근성이 약해 임대가 어려웠던 상층부를 수요가 확인된 모임·행사 용도로 재구성하고, 예약 기반 운영으로 전환했습니다.</p>
+            <div class="case-card__foot">
+              <div class="case-card__metric"><b>공실 → 예약제</b><span>임대 부담을 수익 구조로</span></div>
+              <span class="case-card__brand">MINGLE</span>
+            </div>
+          </div>
+        </article>
+        <article class="case-card reveal">
+          <div class="case-card__media">
+            <img src="/assets/img/photos/case-office.webp" alt="" loading="lazy" width="820" height="434">
+            <span class="case-card__no num">03</span>
+          </div>
+          <div class="case-card__body">
+            <span class="case-card__cat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5 9 13l3.5 3.5L20 8"/><path d="M15.5 8H20v4.5"/></svg><span class="lbl" style="color:var(--teal);">DIAGNOSIS → EXECUTION</span></span>
+            <h3>진단에서 멈추지 않고, 실행까지</h3>
+            <p class="case-card__desc">원인을 짚는 데서 끝나지 않습니다. 개선·시공·오픈·운영까지 한 회사가 이어서 수행하는 것이 이 체계의 마지막 구간입니다.</p>
+            <div class="case-card__foot">
+              <div class="case-card__metric"><b>진단 → 실행</b><span>기획·시공·운영 일원화</span></div>
+              <span class="case-card__brand">공백 空白</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. 현장 점검 -->
+  <section class="section" aria-labelledby="onsite-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">현장 점검</p>
+        <h2 class="h1" id="onsite-title">원격이 확인하지 못하는 것은<br><em>현장이 확인합니다</em></h2>
+        <p class="lead">리포트에 확인 불가로 남은 항목들은 결국 가서 봐야 확정됩니다. 일곱 개 영역 약 100개 항목을 실측하고 사진으로 남기는 현장 점검을 사전 신청으로 받고 있습니다.</p>
+      </div>
+      <div class="onsite-grid reveal">
+        <div class="onsite-panel">
+          <span class="lbl">On-site Checklist</span>
+          <h3>원격이 못 보는 여덟 가지</h3>
+          <ul class="onsite-list">
+            <li>배기·급배수·전기 용량 같은 설비의 실제 상태</li>
+            <li>건축물대장과 현장이 다른 부분 — 무단 증축·용도 불일치</li>
+            <li>출입구와 피난 동선, 소방 완비의 실제 여건</li>
+            <li>누수·결로·균열의 흔적과 마감의 상태</li>
+            <li>실측 면적과 천장고, 기둥과 단차</li>
+            <li>길에서 보이는 정도 — 가시성·정면성과 간판 여건</li>
+          </ul>
+          <p class="onsite-panel__foot">위 항목 외 <b>가시성·주차·주변 공실</b>까지 — 육안 관찰과 비파괴 측정 범위에서 확인하고, 은폐부·구조 안전은 전문 기관 검토를 안내해 드립니다.</p>
+        </div>
+        <figure class="onsite-photo"><img src="/assets/img/photos/onsite.webp" alt="비어 있는 1층 상가 내부에서 태블릿을 들고 공간 상태를 확인하는 두 사람" loading="lazy" width="1200" height="941"></figure>
+      </div>
+      <div class="btn-row reveal">
+        <a class="btn btn--primary" href="/products/onsite/">현장 점검 알아보기</a>
+        <a class="btn btn--ghost" href="/apply/#onsite">사전 신청하기</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. B2B -->
+  <section class="section section--alt section--tight" aria-labelledby="b2b-title">
+    <div class="container">
+      <div class="partner-band reveal">
+        <div class="section-head" style="margin-bottom:0;">
+          <p class="eyebrow">B2B · Partnership</p>
+          <h2 class="h1" id="b2b-title">데이터로 연결하고,<br><em>인사이트로 성장하는 파트너십</em></h2>
+          <p class="lead">같은 진단 체계를 조직의 언어로 제공합니다. 후보지 검토부터 상권 단위 공실 진단까지 — 공간에 대한 다각도 분석과 의사결정 지원으로 더 나은 선택을 함께 만듭니다.</p>
+        </div>
+        <div class="partner-cols">
+          <div class="partner"><span class="partner__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 9 5.6 4.5h12.8L19.5 9"/><path d="M4.5 9a2.5 2.5 0 0 0 5 0 2.5 2.5 0 0 0 5 0 2.5 2.5 0 0 0 5 0"/><path d="M6 12v7.5h12V12"/><path d="M9.5 19.5V15h5v4.5"/></svg></span><div><b>프랜차이즈</b><p>출점 전략 · 후보지 일괄 검토 · 상권 분석과 영업 가능성 확인</p></div></div>
+          <div class="partner"><span class="partner__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><rect x="4" y="4" width="9" height="16.5" rx="1"/><path d="M13 9h6.5v11.5H13"/><path d="M7 8h3M7 11.5h3M7 15h3M16 12.5h1.5M16 16h1.5"/></svg></span><div><b>중개 · 자산관리</b><p>매물 진단 리포트 · 고객 설득 자료 · 임대 조건의 근거 제시</p></div></div>
+          <div class="partner"><span class="partner__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3.5 8.5 4.5H3.5L12 3.5Z"/><path d="M5 8v9M9.7 8v9M14.3 8v9M19 8v9"/><path d="M3.5 17h17M3 20.5h18"/></svg></span><div><b>지자체 · 공공</b><p>지역 상권 공실 진단 · 정책 수립 참고 분석 · 유휴 공간 활용 검토</p></div></div>
+        </div>
+        <div class="btn-row">
+          <a class="btn btn--dark" href="/b2b/">B2B·제휴 안내 보기</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. 최종 CTA -->
+  <section class="section final-cta" aria-labelledby="cta-title">
+    <div class="container">
+      <div class="section-head section-head--center reveal">
+        <p class="eyebrow" style="justify-content:center;">지금 시작하기</p>
+        <h2 class="h1" id="cta-title">주소 하나로 시작해 보세요</h2>
+        <p class="lead">3분이면 방향과 위험 신호, 그리고 아직 확인되지 않은 항목이 보입니다.</p>
+        <div class="btn-row">
+          <a class="btn btn--primary btn--lg" href="/check/">3분 무료 진단 시작하기</a>
+          <a class="btn btn--ghost btn--lg" href="/contact/">궁금한 점 문의하기</a>
+        </div>
+        <div class="final-cta__meta">
+          <span>회원가입 없이 시작</span><span>응답은 저장되지 않습니다</span><span>결과에는 근거와 한계가 함께 적힙니다</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-tagline">
+        <p>공간의 가치를, 데이터로 진단합니다.</p>
+        <span class="code-tag">index.vacancy.co.kr</span>
+      </div>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand">
+            <span class="brand__mark"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 4.6C6 3.72 6.72 3 7.6 3h8.8c.88 0 1.6.72 1.6 1.6V21l-6-4.05L6 21V4.6Z" fill="currentColor"/></svg></span>
+            <span class="brand__text">
+              <span class="brand__name" style="color:#F2F5F4;">BLANK SPACE INDEX</span>
+              <span class="brand__sub" style="color:#93A19C;">by 공백 · 주식회사 블랭크</span>
+            </span>
+          </div>
+          <p>공간·상업용 부동산 통합 평가 체계.<br>공실 진단과 수익화 평가, 현장 확인과 실행까지 —<br>모든 결과에 근거와 한계를 함께 적습니다.</p>
+          <p style="margin-top:12px;">문의 <a href="mailto:spaceblank0100@gmail.com" style="color:#C6CFCC;">spaceblank0100@gmail.com</a></p>
+        </div>
+        <div class="footer-col">
+          <span class="lbl">지수와 진단</span>
+          <ul>
+            <li><a href="/check/">3분 무료 진단</a></li>
+            <li><a href="/index/vacancy/">공실 원인 진단</a></li><li><a href="/index/rent/">적정임대료 진단</a></li><li><a href="/index/business/">영업 가능성 확인</a></li><li><a href="/index/smfi/">공간수익화 적합성 평가</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <span class="lbl">준비 중</span>
+          <ul><li><a class="is-preparing" href="/index/cashflow/">현금흐름 진단</a></li><li><a class="is-preparing" href="/index/facility/">시설·설비 상태 점검</a></li><li><a class="is-preparing" href="/index/tenant/">임차인 안정성 진단</a></li><li><a class="is-preparing" href="/index/value/">건물 가치 범위 분석</a></li></ul>
+        </div>
+        <div class="footer-col">
+          <span class="lbl">회사와 신뢰</span>
+          <ul>
+            <li><a href="/trust/">신뢰와 검증</a></li>
+            <li><a href="/works/">실적·레퍼런스</a></li>
+            <li><a href="/company/">운영사 소개</a></li>
+            <li><a href="/b2b/">B2B·제휴</a></li>
+            <li><a href="/insights/">자료실</a></li>
+            <li><a href="/faq/">자주 묻는 질문</a></li>
+            <li><a href="/samples/">샘플 결과지</a></li>
+            <li><a href="/verify/">리포트 진위 확인</a></li>
+            <li><a href="/glossary/">용어집</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-legal">
+        <p><strong>감정평가와의 구분</strong> — 본 서비스의 모든 진단·분석은 부동산의 경제적 가치를 가액으로 판정하는 감정평가가 아니며, 공간의 수익화·임대·계약 의사결정을 돕는 참고 분석입니다. 담보·소송·세무 등 공식 평가가 필요한 경우에는 감정평가법인 의뢰를 안내해 드립니다.</p>
+        <p>본 결과는 사용자가 입력하거나 공개·제출된 자료를 기준으로 산출한 의사결정 참고용 분석입니다. 법적 효력이 있는 감정평가, 건축·소방·법률·세무·투자 자문을 대체하지 않으며, 실제 거래가격, 임대 성과, 인허가 결과 또는 투자수익을 보장하지 않습니다. 중요한 거래·개발·금융 의사결정 전에는 해당 자격을 가진 전문가의 별도 검토가 필요합니다.</p>
+        <p style="margin-top:10px;color:#6B7774;">사업자 정보(사업자등록번호·통신판매업 신고번호·주소)는 정식 오픈 시점에 이 자리에 표기됩니다.</p>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> BLANK Inc. · BLANK SPACE INDEX</span>
+        <nav>
+          <a href="/legal/terms/">이용약관</a>
+          <a href="/legal/privacy/"><strong style="color:#C6CFCC;">개인정보처리방침</strong></a>
+          <a href="/legal/refund/">환불 규정</a>
+          <a href="/legal/notice/">고지 사항</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+<script src="/assets/js/main.js" defer></script>
+
+<!-- Cloudflare Web Analytics(쿠키 없는 방문 통계). 배포 후 대시보드에서 토큰을 발급받아 아래 주석을 해제하세요.
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "YOUR_TOKEN"}'></script> -->
+</body>
+</html>
