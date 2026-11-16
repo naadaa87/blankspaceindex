@@ -29,6 +29,17 @@ module.exports = (entry) => {
     </div>
   </section>
 
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal"><p class="eyebrow">이해상충</p><h2 class="h1">먼저 인정할 것</h2></div>
+      <div class="admit reveal">
+        <p>평가를 수행하는 회사가 ‘적합’ 판정 이후의 구축·운영 사업까지 맡습니다. 판정이 후속 매출로 이어지는 구조 자체가 이해상충입니다. 진단비를 프로젝트 계약에서 공제하는 제도 역시 밖에서 보면 적합 판정을 낼수록 유리한 구조로 읽힐 수 있습니다.</p>
+        <p>이 구조를 없앨 수는 없습니다. 평가와 실행을 같은 회사가 하기 때문에 진단이 실행 가능한 수준까지 구체적일 수 있고, 그게 이 서비스의 실질적인 강점이기도 합니다. <b>없앨 수 없는 이해상충은 부인할 것이 아니라 공개하고 통제해야 합니다.</b></p>
+      </div>
+      <div class="quote-bar reveal" style="margin-top:24px;"><span class="quote-bar__mark">“</span><p>‘부적합’을 자신 있게 말할 수 있는 회사만이 ‘적합’으로 신뢰받습니다. 판정 분포는 그 자신감을 증명하는 회계 장부입니다.<small>운영 원칙</small></p></div>
+    </div>
+  </section>
   <section class="section">
     <div class="container">
       <div class="section-head reveal"><p class="eyebrow">이해상충 통제</p><h2 class="h1">구조의 위험을 관리하는 다섯 장치</h2>

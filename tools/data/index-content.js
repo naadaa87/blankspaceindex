@@ -232,6 +232,7 @@ const CONTENT = {
     sources: ['bldg', 'rone', 'license', 'sbiz', 'landuse', 'juso'],
     faqs: [FAQ.stdVsPro, FAQ.confidence, FAQ.appraisal],
     next: [
+      { href: '/index/smfi/check/', t: 'SMFI 예비 진단', d: '본 평가와 같은 산식으로 지금 바로 — 점수·모델 순위·간이 수지까지' },
       { href: '/products/onsite/', t: '현장 점검', d: '평가의 신뢰도를 올리는 실측 데이터 확보' },
       { href: '/index/business/', t: '영업 가능성 확인', d: '특정 업종의 법규 관문만 빠르게 확인하고 싶다면' },
       { href: '/contact/', t: '본 평가 상담', d: '공간의 규모와 상황을 알려 주시면 범위와 견적을 안내해 드립니다' },

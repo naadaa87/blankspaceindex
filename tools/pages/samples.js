@@ -29,6 +29,54 @@ module.exports = (entry) => {
     </div>
   </section>
 
+
+  <!-- SMFI 본 평가 리포트 규격 -->
+  <section class="section section--alt" id="smfi-report">
+    <div class="container">
+      <div class="section-head reveal"><p class="eyebrow">본 평가 리포트 규격</p><h2 class="h1">공간수익화 적합성 평가 — 14개 항목</h2>
+      <p class="lead">본 평가(SMFI)의 리포트는 아래 열네 항목으로 고정됩니다. 첫 장만 읽어도 결론이 서도록 쓰고, 마지막 장까지 읽으면 그 결론이 어떻게 나왔는지 전부 재현할 수 있게 씁니다.</p></div>
+      <div class="sp-wrap reveal">
+        <table class="table sp-table">
+          <thead><tr><th style="width:8%;">No</th><th style="width:26%;">항목</th><th>담기는 내용</th></tr></thead>
+          <tbody>
+            ${[
+              ['판정 요약', '종합점수와 신뢰도 병기, 판정 밴드, 핵심 영역 최저선 저촉 여부, 다음 행동'],
+              ['평가 개요', '대상 개요, 조사 기준일, 유효기간, 평가 범위와 방법'],
+              ['자료 목록과 증거등급', '사용한 자료 전체와 A·B·C·D 등급 부여 내역'],
+              ['하드게이트 결과', '12개 게이트 판정, 조건게이트별 해소 조건·개략 비용·기간'],
+              ['공통 기반 평가', '10개 영역 점수와 근거, 핵심 영역 최저선 표시'],
+              ['모델 적합도 순위', '14개 모델 종합점수 순위와 산출 내역'],
+              ['상위 모델 상세', '상위 3개 모델의 강점·약점·요구 조건'],
+              ['하이브리드 검토', '시간대·구역을 나눈 결합 운영의 성립 여부'],
+              ['경제성 — 시나리오', '보수·기준·낙관 3개 시나리오 수지표와 가정의 출처'],
+              ['경제성 — 손익분기·민감도', '손익분기 가동률, 회수 기간, 핵심 변수 민감도'],
+              ['리스크와 대응', '잔여 리스크 목록과 완화 방안, 감점항 내역'],
+              ['판정과 다음 행동', '근거·숫자·다음 행동을 갖춘 판정문과 단계별 실행 권고'],
+              ['채점표 전문', '57개 지표 채점표와 가중치, 신뢰도 산출 내역 전부'],
+              ['출처·고지', '데이터 출처와 기준 시점, 표준 고지 문구'],
+            ].map(([t, d], i) => `<tr><th scope="row" class="num">${String(i + 1).padStart(2, '0')}</th><td><b>${t}</b></td><td>${d}</td></tr>`).join('')}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 판정문 규칙 -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal"><p class="eyebrow">판정문 규칙</p><h2 class="h1">진단명이 아니라 처방전을 씁니다</h2>
+      <p class="lead">리포트의 모든 판정 문장은 세 가지를 갖춰야 합니다 — <b>무엇을 근거로, 얼마나, 그래서 무엇을 할 것인지.</b> 셋 중 하나라도 빠진 문장은 내부 검수에서 반려됩니다.</p></div>
+      <div class="duo-grid reveal">
+        <div class="duo duo--no"><span class="lbl">반려되는 문장</span>
+          <p class="duo__q">“주차 여건이 미흡하여 접근성 개선이 필요함”</p>
+          <p>근거도 숫자도 다음 행동도 없습니다. 읽고 나서 할 수 있는 일이 없습니다.</p></div>
+        <div class="duo duo--yes"><span class="lbl">통과하는 문장</span>
+          <p class="duo__q">“주차 지표 2/5점(현장 실측, 반경 200m 내 공영주차장 34면). 주말 피크 만차율이 높아 예약형 모델의 취소 리스크 요인. 다음 행동 — 인근 민영주차장 2곳과 월 계약 견적을 확인하고, 주차 안내를 예약 확정 문자에 포함.”</p>
+          <p>근거(실측)와 숫자(2/5점·34면)와 다음 행동(견적 확인·문자 포함)이 모두 있습니다.</p></div>
+      </div>
+      <div class="btn-row reveal"><a class="btn btn--primary" href="/index/smfi/check/">예비 진단으로 먼저 계산해 보기</a><a class="btn btn--ghost" href="/apply/">본 평가 상담하기</a></div>
+    </div>
+  </section>
   <section class="section">
     <div class="container">
       <div class="section-head reveal"><p class="eyebrow">지수별 샘플</p><h2 class="h1">실제 지면 보기</h2></div>

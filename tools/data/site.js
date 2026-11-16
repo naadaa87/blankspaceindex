@@ -32,6 +32,7 @@ const NAV = [
           { label: '적정임대료 진단', href: '/index/rent/' },
           { label: '영업 가능성 확인', href: '/index/business/' },
           { label: '공간수익화 적합성 평가', href: '/index/smfi/' },
+          { label: 'SMFI 예비 진단 · 무료', href: '/index/smfi/check/' },
         ],
       },
       {
@@ -75,6 +76,7 @@ const NAV = [
           { label: 'Model Card', href: '/trust/model-cards/' },
           { label: '검증 현황', href: '/trust/validation/' },
           { label: '거버넌스 · 이의와 정정', href: '/trust/governance/' },
+          { label: '보정과 교정', href: '/trust/calibration/' },
           { label: '데이터와 출처', href: '/trust/data/' },
           { label: '개정 이력', href: '/trust/revisions/' },
           { label: '리포트 진위 확인', href: '/verify/' },

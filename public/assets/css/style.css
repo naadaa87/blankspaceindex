@@ -1347,3 +1347,122 @@ button.badge:hover { box-shadow: var(--shadow-sm); }
 /* 신청 허브 — 앵커 진입 하이라이트 */
 .apply-card { scroll-margin-top: 96px; }
 .apply-card:target { border-color: var(--teal); box-shadow: 0 0 0 3px rgba(15, 107, 99, 0.14), var(--shadow-md); }
+
+/* ============================================================
+   SMFI 강화 — 예비 진단 · 방법론 표 · 신뢰 콘텐츠
+   ============================================================ */
+
+/* ---------- 산식 ---------- */
+.formula { font-family: var(--font-label); font-weight: 600; letter-spacing: 0.01em; color: var(--teal-deep); }
+.formula sub { font-size: 0.7em; }
+.side-formula { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 20px; display: grid; gap: 6px; margin: 24px 0 18px; }
+.side-formula .formula { font-size: 16px; }
+.side-formula small { font-size: 12px; color: var(--slate); }
+.formula-box { background: var(--surface); border: 1px solid var(--teal-line); border-radius: var(--radius-lg); padding: 34px 36px; box-shadow: var(--shadow-md); }
+.formula--lg { font-size: clamp(19px, 2.6vw, 27px); text-align: center; padding: 14px 0 22px; }
+.formula-leg { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 26px; border-top: 1px solid var(--line-soft); padding-top: 20px; }
+.formula-leg span { font-size: 14px; color: var(--slate-deep); }
+.formula-leg b { color: var(--teal-deep); font-family: var(--font-label); margin-right: 6px; }
+.formula-note { font-size: 13px; color: var(--slate); margin-top: 16px; }
+.formula-note a { color: var(--teal); font-weight: 600; }
+
+/* ---------- 설계 원칙 · 모델 그룹 ---------- */
+.pri-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+.pri { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; display: grid; gap: 7px; align-content: start; }
+.pri i { font-family: var(--font-label); font-size: 11px; font-weight: 700; color: var(--teal); letter-spacing: 0.08em; font-style: normal; }
+.pri b { font-size: 16px; }
+.pri p { font-size: 13px; color: var(--slate-deep); line-height: 1.6; }
+.mg-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.mg { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 22px; display: grid; gap: 8px; align-content: start; }
+.mg__h { display: flex; align-items: center; gap: 10px; justify-content: space-between; }
+.mg__h b { font-size: 16px; }
+.mg p { font-size: 13px; color: var(--slate-deep); line-height: 1.6; }
+.sp-table tr.is-core th[scope="row"] { color: var(--teal-deep); }
+
+/* ---------- 실패·정직한 구분 · 유형 ---------- */
+.fail-list { display: grid; gap: 12px; }
+.fail { display: flex; gap: 16px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 22px; }
+.fail__tag { flex-shrink: 0; align-self: flex-start; font-size: 12.5px; font-weight: 700; padding: 4px 11px; border-radius: 7px; background: var(--teal-tint); color: var(--teal-deep); }
+.fail b { display: block; font-size: 16.5px; margin-bottom: 5px; }
+.fail p { font-size: 14px; color: var(--slate-deep); line-height: 1.7; }
+.duo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.duo { border: 1px solid var(--line); border-radius: var(--radius); padding: 24px 26px; display: grid; gap: 10px; align-content: start; background: var(--surface); }
+.duo p { font-size: 14px; line-height: 1.75; color: var(--slate-deep); }
+.duo__q { font-size: 15px !important; color: var(--ink) !important; font-weight: 600; padding: 14px 16px; border-radius: 10px; background: var(--off-white); line-height: 1.65 !important; }
+.duo--yes { border-color: #C3E5CF; } .duo--yes .lbl { color: var(--v-ok, #158A43); }
+.duo--no { border-color: #E8D8AC; } .duo--no .lbl { color: var(--v-warn); }
+.type-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.type { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 22px; display: grid; gap: 6px; align-content: start; }
+.type b { font-size: 16px; } .type p { font-size: 13px; color: var(--slate-deep); line-height: 1.6; }
+.admit { background: var(--surface); border: 1px solid var(--line); border-left: 3px solid var(--teal); border-radius: 0 var(--radius) var(--radius) 0; padding: 26px 30px; display: grid; gap: 14px; }
+.admit p { font-size: 15.5px; line-height: 1.85; }
+
+/* ---------- 예비 진단 폼 ---------- */
+.smfi-form { display: grid; gap: 14px; margin-top: 24px; }
+.fld { display: grid; gap: 6px; }
+.fld > span { font-size: 13px; font-weight: 600; color: var(--slate-deep); }
+.fld em { font-style: normal; color: var(--slate); font-weight: 500; }
+.fld-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+select.wiz__input { appearance: none; background-image: linear-gradient(45deg, transparent 50%, var(--slate) 50%), linear-gradient(135deg, var(--slate) 50%, transparent 50%); background-position: calc(100% - 20px) 50%, calc(100% - 14px) 50%; background-size: 6px 6px; background-repeat: no-repeat; padding-right: 40px; }
+.gate-tag { font-size: 13.5px; color: var(--slate-deep); display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 22px; }
+.qblock { border-top: 1px solid var(--line-soft); padding-top: 20px; margin-top: 20px; }
+.qblock:first-of-type { border-top: 0; margin-top: 26px; }
+.qblock__t { font-size: 16.5px; font-weight: 600; line-height: 1.5; }
+.qblock__d { font-size: 13px; color: var(--slate); margin-top: 5px; line-height: 1.55; }
+.scale { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; margin-top: 14px; }
+.scale__b { background: var(--surface); border: 1.5px solid var(--line); border-radius: 10px; padding: 11px 4px 9px; display: grid; gap: 3px; justify-items: center; font: inherit; transition: border-color .15s var(--ease), background .15s var(--ease); }
+.scale__b i { font-family: var(--font-label); font-size: 12px; font-weight: 700; color: var(--slate); font-style: normal; }
+.scale__b span { font-size: 11.5px; color: var(--slate-deep); text-align: center; line-height: 1.3; }
+.scale__b:hover { border-color: var(--teal-line); }
+.scale__b.is-on { border-color: var(--teal); background: var(--teal-tint); }
+.scale__b.is-on i, .scale__b.is-on span { color: var(--teal-deep); font-weight: 700; }
+.wiz__foot { display: flex; align-items: center; gap: 14px; margin-top: 26px; flex-wrap: wrap; }
+.wiz__foot .btn:disabled { opacity: .45; pointer-events: none; }
+
+/* ---------- 예비 진단 결과 ---------- */
+.smfi-score { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; background: var(--off-white); border-radius: var(--radius); padding: 24px 26px; margin-top: 18px; }
+.smfi-score__n { font-size: 52px; font-weight: 700; line-height: 1; letter-spacing: -.02em; margin: 6px 0 10px; }
+.smfi-score__n small { font-size: 17px; color: var(--slate); font-weight: 500; }
+.smfi-conf { display: grid; gap: 6px; align-content: start; border-left: 1px solid var(--line); padding-left: 24px; }
+.smfi-conf__n { font-size: 30px; font-weight: 700; line-height: 1; margin: 4px 0 8px; }
+.smfi-conf__n small { font-size: 13px; color: var(--slate); font-weight: 500; }
+.smfi-conf__t { height: 6px; border-radius: 3px; background: var(--cool-gray); overflow: hidden; }
+.smfi-conf__t span { display: block; height: 100%; background: linear-gradient(90deg, var(--teal), var(--green)); }
+.smfi-conf small { font-size: 12px; color: var(--slate); }
+.abars { display: grid; gap: 7px; }
+.abar { display: grid; grid-template-columns: 150px 1fr 42px; gap: 12px; align-items: center; font-size: 13px; }
+.abar em { font-style: normal; color: var(--slate-deep); }
+.abar__core { font-style: normal; font-size: 10px; color: var(--teal); font-weight: 700; }
+.abar__t { height: 7px; border-radius: 4px; background: var(--cool-gray); overflow: hidden; }
+.abar__t span { display: block; height: 100%; background: var(--teal); border-radius: 4px; }
+.abar b { text-align: right; }
+.abar--low .abar__t span { background: var(--v-warn); }
+.abar--low em { color: var(--v-warn); font-weight: 600; }
+.smfi-t { font-size: 13.5px; }
+.smfi-t th, .smfi-t td { padding: 11px 12px; }
+.smfi-t thead th { background: var(--off-white); font-size: 12px; }
+.smfi-t td small { display: block; font-size: 11px; color: var(--slate); margin-top: 2px; }
+.smfi-t tr.is-top td { background: var(--teal-tint); }
+.kv3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 14px; }
+.kv3 > div { background: var(--off-white); border-radius: 10px; padding: 14px 16px; display: grid; gap: 2px; }
+.kv3 b { font-size: 21px; font-weight: 700; }
+.kv3 small { font-size: 11.5px; color: var(--slate); }
+.hyb { display: grid; gap: 8px; }
+.hyb__i { display: flex; align-items: center; gap: 10px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 11px 15px; font-size: 13.5px; }
+.hyb__i i { margin-left: auto; font-style: normal; font-weight: 700; color: var(--teal-deep); }
+
+@media (max-width: 1080px) {
+  .pri-grid { grid-template-columns: repeat(3, 1fr); }
+  .mg-grid, .type-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 860px) {
+  .formula-leg { grid-template-columns: 1fr; }
+  .pri-grid, .mg-grid, .type-grid, .duo-grid, .kv3 { grid-template-columns: 1fr; }
+  .smfi-score { grid-template-columns: 1fr; }
+  .smfi-conf { border-left: 0; padding-left: 0; border-top: 1px solid var(--line); padding-top: 16px; }
+  .abar { grid-template-columns: 110px 1fr 38px; font-size: 12px; }
+  .fld-row { grid-template-columns: 1fr; }
+  .scale { grid-template-columns: repeat(5, 1fr); gap: 4px; }
+  .scale__b span { font-size: 10px; }
+  .fail { flex-direction: column; gap: 10px; }
+}
