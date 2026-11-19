@@ -151,7 +151,7 @@ function build() {
     <description><![CDATA[${a.summary}]]></description>
   </item>`).join('\n');
   fs.writeFileSync(path.join(OUT, 'rss.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0"><channel>\n  <title>BLANK SPACE INDEX 자료실</title>\n  <link>${SITE.origin}/insights/</link>\n  <description>공실과 임대, 계약을 다루는 글</description>\n  <language>ko</language>\n${rssItems}\n</channel></rss>\n`);
-  fs.writeFileSync(path.join(OUT, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${SITE.origin}/sitemap.xml\n`);
+  fs.writeFileSync(path.join(OUT, 'robots.txt'), `User-agent: *\nAllow: /\nDisallow: /cdn-cgi/\nSitemap: ${SITE.origin}/sitemap.xml\n`);
 
   console.log(`빌드 완료 — 페이지 ${built}면 생성, 스텁 ${stubbed}면, 404·sitemap·robots 포함`);
 }
