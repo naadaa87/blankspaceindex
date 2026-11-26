@@ -23,9 +23,12 @@ const PRICING = {
 
   /* ── 2단계 Pro — 자료 검증 + 검토자 서명 ── */
   pro: {
-    vacancy:  { name: 'Pro · 공실 수익화 평가 진단',   price: 400000, from: false },
-    rent:     { name: 'Pro · 적정임대료 진단',         price: 300000, from: false },
-    business: { name: 'Pro · 업종 영업 허가신청 진단', price: 550000, from: false },
+    vacancy:  { name: 'Pro · 공실 수익화 평가 진단',   price: 400000, from: false,
+                note: '부가세 별도 · Standard 결제액 전액 공제' },
+    rent:     { name: 'Pro · 적정임대료 진단',         price: 300000, from: false,
+                note: '부가세 별도 · Standard 결제액 전액 공제' },
+    business: { name: 'Pro · 업종 영업 허가신청 진단', price: 550000, from: false,
+                note: '부가세 별도 · 관할 확인 비용 포함' },
   },
 
   /* ── 3·4단계 본 평가와 케이스형 — 범위 상품 ── */
@@ -55,7 +58,7 @@ function label(item) {
   if (item.from) {
     return { main: manwon(item.price) + '부터', sub: item.note || (PRICING.vatNote + ' · 규모와 범위에 따라 조정') };
   }
-  return { main: won(item.price), sub: PRICING.vatNote + ' · 결제 즉시 계산' };
+  return { main: won(item.price), sub: item.note || (PRICING.vatNote + ' · 결제 즉시 계산') };
 }
 
 module.exports = { PRICING, label, won, manwon };
