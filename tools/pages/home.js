@@ -109,10 +109,10 @@ const CASES = [
 ];
 
 module.exports = (entry) => {
-  const available = INDEXES.filter((i) => i.status === 'available');
-  const preparing = INDEXES.filter((i) => i.status === 'preparing');
+  const available = INDEXES.filter((i) => i.status === 'available' && i.listed !== false);
+  const preparing = INDEXES.filter((i) => i.status === 'preparing' && i.listed !== false);
 
-  const stripItems = INDEXES.map(
+  const stripItems = INDEXES.filter((i) => i.listed !== false).map(
     (ix) => `<span class="index-strip__item"><b>${ix.name}</b>${ix.question} <span class="code-tag">${ix.code}</span></span>`
   ).join('\n        ');
 
@@ -219,7 +219,7 @@ module.exports = (entry) => {
     <div class="container">
       <div class="section-head section-head--row reveal">
         <div>
-          <p class="eyebrow">여덟 개의 질문</p>
+          <p class="eyebrow">일곱 개의 질문</p>
           <h2 class="h1" id="index-title">지수의 이름은 코드가 아니라 질문입니다</h2>
           <p class="lead">지금 이용할 수 있는 네 가지와 준비 중인 네 가지를 그대로 보여 드립니다. 검증되지 않은 지수에 이름을 붙여 내보내지 않는 것도 이 체계의 원칙입니다.</p>
         </div>
@@ -413,7 +413,7 @@ module.exports = (entry) => {
           <p class="lead">같은 진단 체계를 조직의 언어로 제공합니다. 후보지 검토부터 상권 단위 공실 진단까지 — 공간에 대한 다각도 분석과 의사결정 지원으로 더 나은 선택을 함께 만듭니다.</p>
         </div>
         <div class="partner-cols">
-          <div class="partner"><span class="partner__icon">${I.fr}</span><div><b>프랜차이즈</b><p>출점 전략 · 후보지 일괄 검토 · 상권 분석과 영업 가능성 확인</p></div></div>
+          <div class="partner"><span class="partner__icon">${I.fr}</span><div><b>프랜차이즈</b><p>출점 전략 · 후보지 일괄 검토 · 상권 분석과 업종 영업 허가신청 진단</p></div></div>
           <div class="partner"><span class="partner__icon">${I.broker}</span><div><b>중개 · 자산관리</b><p>매물 진단 리포트 · 고객 설득 자료 · 임대 조건의 근거 제시</p></div></div>
           <div class="partner"><span class="partner__icon">${I.gov}</span><div><b>지자체 · 공공</b><p>지역 상권 공실 진단 · 정책 수립 참고 분석 · 유휴 공간 활용 검토</p></div></div>
         </div>

@@ -1,7 +1,7 @@
 /**
  * 지수 체계 소개 — 제작지시서 6.2절의 다섯 절 구성
  * ① 공실 시대와 판단 인프라의 공백  ② 다섯 번째 자리(포지셔닝)
- * ③ 여덟 지수의 지도와 연동 구조  ④ Standard·Pro와 3계층 리포트
+ * ③ 일곱 지수의 지도와 연동 구조  ④ Standard·Pro와 3계층 리포트
  * ⑤ 평가→실행 순환과 통제 장치  → 진단·상세 분기
  */
 const { INDEXES, BADGES, PICTOGRAMS } = require('../data/registry');
@@ -55,10 +55,10 @@ module.exports = (entry) => {
   <!-- ③ 지수 지도와 연동 -->
   <section class="section">
     <div class="container">
-      <div class="section-head reveal"><p class="eyebrow">여덟 개의 질문</p><h2 class="h1">지수의 지도</h2>
-      <p class="lead">각 지수는 공간에 대한 하나의 질문에 답합니다. 지금 이용할 수 있는 네 가지로 시작해, 검증을 마치는 순서대로 네 가지가 더해집니다.</p></div>
+      <div class="section-head reveal"><p class="eyebrow">일곱 개의 질문</p><h2 class="h1">지수의 지도</h2>
+      <p class="lead">각 지수는 공간에 대한 하나의 질문에 답합니다. 지금 이용할 수 있는 세 가지로 시작해, 검증을 마치는 순서대로 네 가지가 더해집니다. 공실 수익화 평가 진단은 Standard부터 본 평가까지 네 단계로 깊이를 고를 수 있습니다.</p></div>
       <div class="index-grid">
-        ${INDEXES.map(miniCard).join('\n        ')}
+        ${INDEXES.filter((i) => i.listed !== false).map(miniCard).join('\n        ')}
       </div>
       <div class="section-head reveal" style="margin-top:72px;margin-bottom:24px;">
         <p class="eyebrow">상황에서 출발하기</p>
@@ -69,10 +69,10 @@ module.exports = (entry) => {
           <thead><tr><th>지금 상황</th><th style="width:22%;">먼저 볼 지수</th><th>그 이유</th><th style="width:12%;"></th></tr></thead>
           <tbody>
             ${[
-              ['공실이 6개월을 넘겼다', '공실 원인 진단', '조건을 만지기 전에 원인의 자리를 먼저 갈라야 손실을 막습니다.', '/index/vacancy/'],
+              ['공실이 6개월을 넘겼다', '공실 수익화 평가 진단', '조건을 만지기 전에 원인의 자리를 먼저 갈라야 손실을 막습니다.', '/index/vacancy/'],
               ['재계약 협상이 다가온다', '적정임대료 진단', '부를 숫자의 근거 — 유효임대료 기준의 내 위치가 협상의 출발점입니다.', '/index/rent/'],
-              ['계약·창업을 앞두고 있다', '영업 가능성 확인', '도장을 찍기 전에 여덟 관문부터 — 계약 후에는 되돌릴 수 없습니다.', '/index/business/'],
-              ['용도 전환·직접 운영을 고민한다', '공간수익화 적합성 평가', '열네 가지 모델의 적합도와 경제성까지, 본 평가로 판정합니다.', '/index/smfi/'],
+              ['계약·창업을 앞두고 있다', '업종 영업 허가신청 진단', '도장을 찍기 전에 여덟 관문부터 — 계약 후에는 되돌릴 수 없습니다.', '/index/business/'],
+              ['용도 전환·직접 운영을 고민한다', '공실 수익화 평가 진단 · 본 평가', '열네 가지 모델의 적합도와 경제성까지, 본 평가로 판정합니다.', '/index/smfi/'],
               ['매입을 검토 중이다', '적합성 평가 + 적정임대료', '활용 계획의 성립과 임대료 가정 — 가격 판단의 두 기둥입니다.', '/index/smfi/'],
               ['원격 결과에 확인 불가가 남았다', '현장 점검', '실측과 사진 증빙으로 추정을 확정으로 바꿉니다.', '/products/onsite/'],
             ].map(([sit, ix, why, href]) => `<tr><th scope="row">${sit}</th><td><b>${ix}</b></td><td>${why}</td><td><a class="link-arrow" href="${href}" style="margin-top:0;">보기</a></td></tr>`).join('')}
@@ -83,7 +83,7 @@ module.exports = (entry) => {
         <div>
           <p class="eyebrow">지수는 서로를 돕습니다</p>
           <h3 class="h2">따로 쓰면 진단, 함께 쓰면 체계</h3>
-          <p class="lead" style="font-size:16.5px;">공실 원인 진단은 어셈블리 지수입니다. 적정임대료 진단이 확인한 가격의 간극, 영업 가능성 확인이 걸러낸 법규의 결격, 적합성 평가의 모델 판정이 원인 축의 증거로 흘러 들어와 진단의 신뢰도를 끌어올립니다. 같은 주소의 케이스는 자동으로 연결됩니다.</p>
+          <p class="lead" style="font-size:16.5px;">공실 수익화 평가 진단은 어셈블리 지수입니다. 적정임대료 진단이 확인한 가격의 간극, 업종 영업 허가신청 진단이 걸러낸 법규의 결격, 적합성 평가의 모델 판정이 원인 축의 증거로 흘러 들어와 진단의 신뢰도를 끌어올립니다. 같은 주소의 케이스는 자동으로 연결됩니다.</p>
         </div>
         <figure class="layer-figure">${assembly()}</figure>
       </div>
@@ -134,7 +134,7 @@ module.exports = (entry) => {
         <p class="lead">내 공간의 상태가 궁금하면 3분 진단부터, 특정 질문이 있다면 해당 지수로 바로 가시면 됩니다.</p>
         <div class="btn-row">
           <a class="btn btn--primary btn--lg" href="/check/">3분 무료 진단 시작하기</a>
-          <a class="btn btn--ghost btn--lg" href="/index/vacancy/">공실 원인 진단 보기</a>
+          <a class="btn btn--ghost btn--lg" href="/index/vacancy/">공실 수익화 평가 진단 보기</a>
         </div>
       </div>
     </div>

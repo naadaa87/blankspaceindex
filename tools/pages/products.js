@@ -41,9 +41,9 @@ module.exports = (entry) => {
       <p class="lead">세 지수의 Standard는 결제 후 즉시 계산되어 결과지가 발행됩니다. 결제액은 같은 지수의 Pro 전환 시 전액 공제됩니다.</p></div>
       <div class="prod-grid">
         ${[
-          ['공실 원인 진단', 'SVDI 1.1', '공실을 갖고 있어요', '원인 후보 최대 2개 + 확인 순서 + 이번 주 할 일. 결과지 4면.', '9문항 · 5분 · 즉시 발행', '/index/vacancy/', 'vacancy'],
+          ['공실 수익화 평가 진단', 'SVDI 1.1', '공실을 갖고 있어요', '원인 후보 최대 2개 + 확인 순서 + 이번 주 할 일. 결과지 4면.', '9문항 · 5분 · 즉시 발행', '/index/vacancy/', 'vacancy'],
           ['적정임대료 진단', 'SRVI 2.1', '공실 · 재계약 국면', '시장 밴드 위의 내 위치 + 판정 + 등가 조합 + 3가격점. 결과지 5면(신뢰도 충족 시).', '7문항 · 5분 · 즉시 발행', '/index/rent/', 'rent'],
-          ['영업 가능성 확인', 'SCPI 1.1', '계약·창업을 앞두고 있어요', '8관문 신호등 + 업종 매트릭스 + 확인 필요 항목과 관할 질문. 결과지 5면.', '2+α문항 · 3분 · 즉시 발행', '/index/business/', 'business'],
+          ['업종 영업 허가신청 진단', 'SCPI 1.1', '계약·창업을 앞두고 있어요', '8관문 신호등 + 업종 매트릭스 + 확인 필요 항목과 관할 질문. 결과지 5면.', '2+α문항 · 3분 · 즉시 발행', '/index/business/', 'business'],
         ]
           .map(
             ([name, code, sit, desc, terms, href, key]) => P(
@@ -62,20 +62,46 @@ module.exports = (entry) => {
     </div>
   </section>
 
-  <!-- 케이스형 -->
-  <section class="section section--alt" id="case">
+  <!-- 2단계 Pro -->
+  <section class="section section--alt" id="pro">
     <div class="container">
-      <div class="section-head reveal"><p class="eyebrow">전문가와 현장 · 케이스형</p><h2 class="h1">검토와 서명, 그리고 실측이 붙습니다</h2>
-      <p class="lead">규모와 범위에 따른 견적 구조입니다. 표준 범위는 신청 즉시, 건물 단위·복수 호실은 영업일 1일 안에 견적을 안내드립니다.</p></div>
+      <div class="section-head reveal"><p class="eyebrow">2단계 · 전문가 진단 Pro</p><h2 class="h1">검증과 서명이 붙습니다</h2>
+      <p class="lead">자료를 제출받아 검증하고, 담당 평가자가 산출한 결과를 별도 검토자가 확인해 서명합니다. 협상·설득 자리에 제시할 수 있는 문서입니다. Standard 결제액은 같은 지수의 Pro 전환 시 ${PRICING.credit.standardToPro} 공제됩니다.</p></div>
       <div class="prod-grid">
         ${[
-          ['전문가 진단 Pro', '지수별', '자료를 제출받아 검증하고, 담당 평가자가 검토·서명해 발행합니다. 협상·설득 자리에 쓸 수 있는 문서입니다.', '영업일 3~5일 · 검토자 서명', '/apply/#pro', '문의하기', PRICING.pro.vacancy],
-          ['공간수익화 본 평가', 'SMFI 2.1', '5단계 파이프라인 전체를 수행하는 본 평가입니다. 모델별 적합도와 4등급 판정, 경제성 검증까지.', '범위 협의 · 심층 리포트', '/index/smfi/', '상담하기', PRICING.case.smfiStandard],
-          ['현장 점검', 'P5', '일곱 개 영역 약 100개 항목을 실측·촬영합니다. 원격의 확인 불가 항목이 여기서 확정됩니다.', '방문 후 영업일 5일 · 사진 증빙', '/products/onsite/', '사전 신청', PRICING.case.onsite],
-          ['종합 심층 리포트', 'P6', '전 지수와 시나리오, 실행 계획까지 — 제본 리포트와 대면 보고가 포함된 최상위 구성입니다.', '영업일 10일 · 제본 + 대면 보고', '/products/deep/', '자세히', PRICING.case.deep],
+          ['공실 수익화 평가 진단', 'SVDI 1.1', '원인 기여도 분해와 처방 카드, 흡수기간 구간까지. 현장 결합 시 설비·정면성이 실측으로 확정됩니다.', '영업일 3일 · 현장 결합 7일', 'vacancy', '/index/vacancy/'],
+          ['적정임대료 진단', 'SRVI 2.1', '사례를 직접 선정해 검증하고, 공실조정 권장가와 관리비 성격 판정, 민감도까지 제공합니다.', '영업일 3일 · 검토자 서명', 'rent', '/index/rent/'],
+          ['업종 영업 허가신청 진단', 'SCPI 1.1', '관할 확인까지 포함해 CLEAR 라벨을 승격하고, 해소 경로와 비용·기간, 리스크 노출액을 산정합니다.', '영업일 5일 · 관할 확인 포함', 'business', '/index/business/'],
         ]
           .map(
-            ([name, code, desc, terms, href, cta, pr]) => P(
+            ([name, code, desc, terms, key, href]) => P(
+              'reveal',
+              `<div class="prod__head"><span class="chip chip--green">Pro</span><h3 class="h2">${name}</h3><span class="code-tag">${code}</span></div>
+               <p class="prod__desc">${desc}</p>
+               <div class="prod__price"><b>${label(PRICING.pro[key]).main}</b><small>${label(PRICING.pro[key]).sub}</small></div>
+               <div class="prod__foot"><span class="prod__terms">${terms}</span>
+                 <span class="prod__btns"><a class="btn btn--ghost btn--sm" href="${href}">자세히</a><a class="btn btn--primary btn--sm" href="/apply/#pro">신청하기</a></span></div>`
+            )
+          )
+          .join('\n        ')}
+      </div>
+    </div>
+  </section>
+
+  <!-- 3·4단계 본 평가와 현장 -->
+  <section class="section" id="case">
+    <div class="container">
+      <div class="section-head reveal"><p class="eyebrow">3·4단계 · 본 평가와 현장</p><h2 class="h1">실측이 붙고, 모델과 숫자가 나옵니다</h2>
+      <p class="lead">아래 금액은 표준 범위의 출발점입니다. 공간의 규모와 층 구성, 검토 모델 수, 현장 거리에 따라 조정되며 — 신청하시면 조건을 확인한 뒤 확정 금액을 먼저 알려 드리고 동의하신 뒤에 착수합니다.</p></div>
+      <div class="prod-grid">
+        ${[
+          ['본 평가 · 표준', 'SMFI 2.1', '공실 수익화 평가 진단의 3단계. 하드게이트 12 전수, 10영역 57지표 채점, 14개 모델 순위와 3개 시나리오·손익분기까지.', '영업일 10일 · 14항목 리포트 · 현장 실사 1회', PRICING.case.smfiStandard, '/index/smfi/', '상담하기'],
+          ['본 평가 · 심화', 'SMFI 2.1', '4단계. 표준 전 범위에 인근 동종 공간 관측, 하이브리드 조합 설계, 민감도 분석, 대면 보고회를 더합니다.', '영업일 10일+ · 대면 보고 · 후속 질의', PRICING.case.smfiExpert, '/index/smfi/', '상담하기'],
+          ['현장 점검', 'P5', '일곱 개 영역 약 100개 항목을 실측·촬영합니다. 원격의 확인 불가 항목이 여기서 확정되고, 관련 지수의 신뢰도가 올라갑니다.', '방문 후 영업일 5일 · 사진 증빙', PRICING.case.onsite, '/products/onsite/', '신청하기'],
+          ['종합 심층 리포트', 'P6', '전 지수와 시나리오, 실행 계획까지 — 제본 리포트와 대면 보고가 포함된 최상위 구성입니다.', '영업일 10일 · 제본 + 대면 보고', PRICING.case.deep, '/products/deep/', '자세히'],
+        ]
+          .map(
+            ([name, code, desc, terms, pr, href, cta]) => P(
               'prod--case reveal',
               `<div class="prod__head"><span class="chip chip--green">케이스형</span><h3 class="h2">${name}</h3><span class="code-tag">${code}</span></div>
                <p class="prod__desc">${desc}</p>
@@ -86,6 +112,7 @@ module.exports = (entry) => {
           )
           .join('\n        ')}
       </div>
+      <div class="notice reveal" style="margin-top:22px;"><p><strong>현장 점검의 할증 기준</strong> — 표시 금액은 기본 범위(점포 단위) 기준입니다. 전용 면적 구간과 층 구성, 건물 전체·복수 호실 여부, 현장 거리에 따라 할증되며 신청 시 확정 금액을 먼저 안내드립니다.</p></div>
     </div>
   </section>
 

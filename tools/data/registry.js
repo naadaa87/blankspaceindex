@@ -12,16 +12,33 @@ const INDEXES = [
   {
     slug: 'vacancy',
     code: 'SVDI', version: '1.1',
-    name: '공실 원인 진단',
-    question: '이 공간은 왜 비어 있고, 무엇부터 바꿔야 하는가',
-    oneLiner: '비어 있는 이유를 가격·물리·설비·법규·상권·계약·노출·관리의 여덟 갈래로 나눠 확인하고, 무엇부터 바꿀지 순서를 잡아 드립니다.',
+    /* 통합 지수 — 원인 진단(SVDI 1.1)과 수익화 적합성 평가(SMFI 2.1)를 한 상품 라인으로 묶는다.
+       같은 질문에 답하되 깊이가 다르고, 단계마다 쓰는 엔진과 근거의 등급이 다르다. */
+    name: '공실 수익화 평가 진단',
+    question: '이 공간은 왜 비어 있고, 무엇으로 바꿔야 하는가',
+    oneLiner: '비어 있는 이유를 여덟 갈래로 나눠 확인하고, 이 공간으로 무엇이 되는지까지 — 원인부터 수익 모델과 손익분기까지 한 줄기로 답합니다.',
     status: 'available',            // available | preparing
     badge: 'expert',
     standard: { time: '9문항 · 5분 내외', report: '결과지 4면 · 즉시 발행', note: '원인 후보 최대 2개와 확인 순서, 이번 주 할 일까지' },
     pro: { remote: '전문가 진단(원격) 영업일 3일', onsite: '현장 결합 영업일 7일' },
-    audience: '공실을 가진 임대인',
-    related: ['rent', 'onsite'],
+    audience: '공실을 가진 임대인, 활용 방향을 정해야 하는 소유자',
+    related: ['rent', 'business'],
     pictogram: 'vacancy',
+    /* 네 단계 사다리 — 가격은 tools/data/pricing.js 가 단일 원천 */
+    tiers: [
+      { key: 'standard', step: '1단계', label: 'Standard · 셀프 진단', engine: 'SVDI 1.1',
+        what: '응답을 전제로 즉시 계산합니다. 원인 후보 두 개와 확인 순서, 이번 주 할 일.',
+        terms: '9문항 · 5분 · 결과지 4면 즉시', price: ['standard', 'vacancy'], href: '/apply/#pro' },
+      { key: 'pro', step: '2단계', label: 'Pro · 전문가 진단', engine: 'SVDI 1.1',
+        what: '자료를 제출받아 검증하고 담당 평가자가 검토·서명합니다. 원인 기여도와 처방 카드까지.',
+        terms: '영업일 3일 · 현장 결합 시 7일 · 검토자 서명', price: ['pro', 'vacancy'], href: '/apply/#pro' },
+      { key: 'smfiStandard', step: '3단계', label: '본 평가 · 표준', engine: 'SMFI 2.1',
+        what: '결격 관문 12개 전수와 10영역 57지표 채점, 14개 수익모델 순위와 경제성 검증.',
+        terms: '영업일 10일 · 14항목 리포트 · 현장 실사 1회', price: ['case', 'smfiStandard'], href: '/apply/#smfi' },
+      { key: 'smfiExpert', step: '4단계', label: '본 평가 · 심화', engine: 'SMFI 2.1',
+        what: '표준 전 범위에 인근 관측과 하이브리드 설계, 민감도 분석과 대면 보고회를 더합니다.',
+        terms: '영업일 10일+ · 대면 보고회 · 후속 질의 대응', price: ['case', 'smfiExpert'], href: '/apply/#smfi' },
+    ],
   },
   {
     slug: 'rent',
@@ -40,7 +57,7 @@ const INDEXES = [
   {
     slug: 'business',
     code: 'SCPI', version: '1.1',
-    name: '영업 가능성 확인',
+    name: '업종 영업 허가신청 진단',
     question: '이 공간에서 내가 하려는 영업이 합법적으로 가능한가',
     oneLiner: '용도부터 정화조·주차·소방·학교 앞 제한까지 여덟 관문을 차례로 확인하고, 확정할 수 없는 것은 확인 필요로 정직하게 남깁니다.',
     status: 'available',
@@ -48,13 +65,19 @@ const INDEXES = [
     standard: { time: '주소·업종 2문항 + 조건 분기 3~5문항 · 3분', report: '결과지 5면 · 즉시 발행', note: '여덟 관문의 판정과 확인 필요 항목, 관할에 물을 질문까지' },
     pro: { remote: '전문가 진단 영업일 5일 · 관할 확인 포함' },
     audience: '계약을 앞둔 예비 창업자·임차인',
-    related: ['smfi', 'onsite'],
+    related: ['vacancy', 'onsite'],
     pictogram: 'business',
   },
   {
     slug: 'smfi',
     code: 'SMFI', version: '2.1',
     name: '공간수익화 적합성 평가',
+    /* listed: false — 독립 지수가 아니라 '공실 수익화 평가 진단'의 3·4단계(본 평가)다.
+       지수 지도·내비·푸터 목록에서는 빼고, 상세 페이지와 Model Card·검증 현황에는 남긴다.
+       SMFI 2.1은 실제로 돌아가는 엔진이므로 방법론과 검증 공시의 대상에서 빠지면 안 된다. */
+    listed: false,
+    parent: 'vacancy',
+    tierLabel: '본 평가 — 공실 수익화 평가 진단의 3·4단계',
     question: '이 공간으로 무엇을 해야 하는가',
     oneLiner: '결격 조건과 열 개 영역의 검증을 거쳐 열네 가지 수익 모델의 적합도를 판정하고, 손익분기까지 확인한 답을 드립니다.',
     status: 'available',
@@ -62,7 +85,7 @@ const INDEXES = [
     standard: null,
     pro: { remote: '본 평가 영업일 10일 · 제출 가능 보고서', label: '본 평가' },
     audience: '활용 방향을 정해야 하는 소유자·투자자',
-    related: ['business', 'deep'],
+    related: ['vacancy', 'deep'],
     pictogram: 'smfi',
   },
   {

@@ -28,7 +28,7 @@ const SITE = {
     mailOrderNo: '',
     address: '',
   },
-  desc: '공실 원인 진단부터 적정임대료, 영업 가능성, 공간수익화 적합성 평가까지 — 10년의 실행 경험으로 설계한 공간·상업용 부동산 평가 체계. 모든 결과에 근거와 한계를 함께 적습니다.',
+  desc: '공실 수익화 평가 진단부터 적정임대료, 업종 영업 허가신청까지 — 10년의 실행 경험으로 설계한 공간·상업용 부동산 평가 체계. 모든 결과에 근거와 한계를 함께 적습니다.',
   shortDesc: '공간의 가치를, 데이터로 진단합니다',
 };
 
@@ -43,11 +43,11 @@ const NAV = [
       {
         label: '지금 이용 가능',
         links: [
-          { label: '공실 원인 진단', href: '/index/vacancy/' },
+          { label: '공실 수익화 평가 진단', href: '/index/vacancy/' },
+          { label: '└ 본 평가 (3·4단계)', href: '/index/smfi/' },
+          { label: '└ 예비 진단 · 무료', href: '/index/smfi/check/' },
           { label: '적정임대료 진단', href: '/index/rent/' },
-          { label: '영업 가능성 확인', href: '/index/business/' },
-          { label: '공간수익화 적합성 평가', href: '/index/smfi/' },
-          { label: 'SMFI 예비 진단 · 무료', href: '/index/smfi/check/' },
+          { label: '업종 영업 허가신청 진단', href: '/index/business/' },
         ],
       },
       {

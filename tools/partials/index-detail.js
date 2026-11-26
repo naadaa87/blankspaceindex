@@ -8,6 +8,7 @@
 const { INDEXES, BADGES, PICTOGRAMS } = require('../data/registry');
 const { CONTENT, SOURCES } = require('../data/index-content');
 const { SITE, NOTICES } = require('../data/site');
+const { PRICING, label } = require('../data/pricing');
 const { pipeline } = require('./figures');
 
 const badgeBtn = (key) => {
@@ -21,7 +22,7 @@ const verdictChip = ([label, tone]) => `<span class="verdict verdict--${tone}">$
 const SPECIMENS = {
   /* SVDI — 원인 후보 2 + 확인 순서 */
   causes: () => `
-    <div class="spec-card" role="img" aria-label="공실 원인 진단 결과 화면 예시">
+    <div class="spec-card" role="img" aria-label="공실 수익화 평가 진단 결과 화면 예시">
       <div class="spec-card__bar"><span class="lbl">Result Preview</span><span class="code-tag">SVDI 1.1 · Standard</span></div>
       <div class="spec-card__body">
         <p class="spec-card__line">입력하신 조건이 맞다면, 원인은 아래 두 축에 있을 가능성이 큽니다.</p>
@@ -76,7 +77,7 @@ const SPECIMENS = {
       ['지역 규정', 'neutral', 'UNVERIFIED'],
     ];
     return `
-    <div class="spec-card" role="img" aria-label="영업 가능성 확인 결과 화면 예시">
+    <div class="spec-card" role="img" aria-label="업종 영업 허가신청 진단 결과 화면 예시">
       <div class="spec-card__bar"><span class="lbl">Result Preview</span><span class="code-tag">SCPI 1.1 · Standard</span></div>
       <div class="spec-card__body">
         <p class="spec-card__line">목표 업종 <b>일반음식점</b> — 여덟 관문 중 다섯이 통과, 셋이 확인 대상입니다.</p>
@@ -191,6 +192,31 @@ const preparingPage = (ix, c) => `
     </div>
   </section>`;
 
+
+/* 통합 지수의 단계 사다리 — 같은 질문, 다른 깊이 */
+const tierLadder = (ix) => {
+  if (!ix.tiers) return '';
+  return `
+  <section class="section section--alt" id="tiers">
+    <div class="container">
+      <div class="section-head reveal"><p class="eyebrow">네 단계</p><h2 class="h1">같은 질문에, 네 가지 깊이로 답합니다</h2>
+      <p class="lead">원인을 좁히는 데서 멈출 수도, 수익 모델과 손익분기까지 갈 수도 있습니다. 단계가 올라갈수록 쓰는 엔진과 자료의 증거등급이 달라지고, 그만큼 판정의 무게가 달라집니다.</p></div>
+      <div class="ladder reveal">
+        ${ix.tiers.map((t) => {
+          const pr = label(PRICING[t.price[0]][t.price[1]]);
+          return `<div class="ladder__row">
+            <div class="ladder__step"><span class="lbl">${t.step}</span><b>${t.label}</b><span class="code-tag">${t.engine}</span></div>
+            <div class="ladder__what"><p>${t.what}</p><span class="ladder__terms">${t.terms}</span></div>
+            <div class="ladder__price"><b>${pr.main}</b><small>${pr.sub}</small>
+              <a class="btn btn--ghost btn--sm" href="${t.href}">신청</a></div>
+          </div>`;
+        }).join('')}
+      </div>
+      <div class="notice reveal" style="margin-top:22px;"><p><strong>단계 사이의 공제</strong> — Standard 결제액은 같은 지수의 Pro 전환 시 ${PRICING.credit.standardToPro} 공제되고, 유료 진단 비용은 이후 블랭크와의 시공·운영 프로젝트 계약 시 ${PRICING.credit.toProject} 공제됩니다. 아래에서 시작해 위로 올라가도 비용이 겹치지 않는 구조입니다.</p></div>
+    </div>
+  </section>`;
+};
+
 /* ── 메인 렌더 ── */
 module.exports = function renderIndexDetail(entry, slug) {
   const ix = INDEXES.find((i) => i.slug === slug);
@@ -204,7 +230,7 @@ module.exports = function renderIndexDetail(entry, slug) {
     <div class="container">
       <div class="dhero__grid">
         <div>
-          <p class="eyebrow">${slug === 'smfi' ? '본 평가' : '셀프 진단 · Standard'} — 지금 이용 가능</p>
+          <p class="eyebrow">${ix.tierLabel ? ix.tierLabel : slug === 'smfi' ? '본 평가' : '셀프 진단 · Standard'}</p>
           <h1 class="h-display" style="font-size:clamp(30px,3.8vw,44px);">${ix.question}</h1>
           <p class="dhero__name">${ix.name} <span class="code-tag">${ix.code} ${ix.version}</span> ${badgeBtn(ix.badge)}</p>
           <p class="hero__sub">${c.lede}</p>
@@ -248,6 +274,8 @@ module.exports = function renderIndexDetail(entry, slug) {
       <p class="muted" style="margin-top:18px;">구조는 공개하되 세부 가중치와 파라미터는 공개하지 않습니다. 무엇을 계산하고 무엇을 계산하지 않는지는 <a href="/trust/model-cards/" style="color:var(--teal);font-weight:600;">Model Card</a>에 정리되어 있습니다.</p>
     </div>
   </section>
+
+  ${tierLadder(ix)}
 
   <!-- 4. Standard와 Pro -->
   <section class="section section--alt">

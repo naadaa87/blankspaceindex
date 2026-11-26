@@ -1471,3 +1471,25 @@ select.wiz__input { appearance: none; background-image: linear-gradient(45deg, t
 .footer-biz { display: flex; flex-wrap: wrap; gap: 6px 20px; margin-top: 12px; color: #93A19C; font-size: 12.5px; line-height: 1.7; }
 .footer-biz b { color: #B9C4C0; font-weight: 600; margin-right: 5px; }
 .footer-biz a { color: #B9C4C0; }
+
+/* 통합 지수 단계 사다리 */
+.ladder { display: grid; gap: 10px; }
+.ladder__row {
+  display: grid; grid-template-columns: minmax(0,3.1fr) minmax(0,5.4fr) minmax(0,2.8fr);
+  gap: 20px; align-items: center;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 20px 24px; transition: border-color .15s var(--ease), box-shadow .15s var(--ease);
+}
+.ladder__row:hover { border-color: var(--teal-line); box-shadow: var(--shadow-md); }
+.ladder__step { display: grid; gap: 3px; justify-items: start; }
+.ladder__step b { font-size: 16.5px; }
+.ladder__what p { font-size: 14px; color: var(--slate-deep); line-height: 1.65; }
+.ladder__terms { display: block; margin-top: 6px; font-size: 12.5px; color: var(--slate); }
+.ladder__price { display: grid; gap: 3px; justify-items: end; text-align: right; }
+.ladder__price b { font-size: 19px; font-weight: 700; color: var(--teal-deep); }
+.ladder__price small { font-size: 11.5px; color: var(--slate); line-height: 1.5; }
+.ladder__price .btn { margin-top: 6px; }
+@media (max-width: 960px) {
+  .ladder__row { grid-template-columns: 1fr; gap: 12px; }
+  .ladder__price { justify-items: start; text-align: left; }
+}

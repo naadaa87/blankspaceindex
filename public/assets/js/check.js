@@ -313,9 +313,9 @@
   };
 
   var INDEX_META = {
-    vacancy: { name: '공실 원인 진단', time: '9문항 · 5분', href: '/index/vacancy/' },
+    vacancy: { name: '공실 수익화 평가 진단', time: '9문항 · 5분', href: '/index/vacancy/' },
     rent: { name: '적정임대료 진단', time: '7문항 · 5분', href: '/index/rent/' },
-    business: { name: '영업 가능성 확인', time: '2+α문항 · 3분', href: '/index/business/' },
+    business: { name: '업종 영업 허가신청 진단', time: '2+α문항 · 3분', href: '/index/business/' },
     smfi: { name: '공간수익화 적합성 평가', time: '본 평가 · 상담', href: '/index/smfi/' },
   };
 

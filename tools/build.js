@@ -20,9 +20,9 @@ const PAGES_DIR = path.join(__dirname, 'pages');
 const SITEMAP = [
   { path: '/', title: '메인', desc: '공간·상업용 부동산 통합 평가 체계 BLANK SPACE INDEX. 왜 그런지, 그래서 무엇을 해야 하는지 — 주소 하나로 3분 진단을 시작해 보세요.' },
   { path: '/about-index/', title: '지수 체계 소개', desc: '조회가 아니라 진단. 여덟 개의 지수와 Standard·Pro 이원 체계, 평가에서 실행까지 이어지는 구조를 소개합니다.' },
-  { path: '/index/vacancy/', title: '공실 원인 진단', desc: '이 공간은 왜 비어 있고, 무엇부터 바꿔야 하는가. 여덟 갈래 원인 분해와 확인 순서를 제시하는 진단입니다.' },
+  { path: '/index/vacancy/', title: '공실 수익화 평가 진단', desc: '이 공간은 왜 비어 있고, 무엇부터 바꿔야 하는가. 여덟 갈래 원인 분해와 확인 순서를 제시하는 진단입니다.' },
   { path: '/index/rent/', title: '적정임대료 진단', desc: '지금 조건이 시장과 맞는가. 보증금·렌트프리까지 반영한 실질 조건을 시장 범위 위에서 확인합니다.' },
-  { path: '/index/business/', title: '영업 가능성 확인', desc: '이 공간에서 내가 하려는 영업이 합법적으로 가능한가. 여덟 관문을 차례로 확인합니다.' },
+  { path: '/index/business/', title: '업종 영업 허가신청 진단', desc: '이 공간에서 내가 하려는 영업이 합법적으로 가능한가. 여덟 관문을 차례로 확인합니다.' },
   { path: '/index/smfi/', title: '공간수익화 적합성 평가', desc: '이 공간으로 무엇을 해야 하는가. 결격 확인부터 수익 모델 적합도와 경제성 검증까지의 본 평가입니다.' },
   { path: '/index/smfi/check/', title: 'SMFI 예비 진단', desc: '본 평가와 같은 산식으로 계산하는 무료 자가진단. 예비 점수와 14개 모델 순위, 손익분기 가동률까지 브라우저 안에서 산출합니다.' },
   { path: '/index/cashflow/', title: '현금흐름 진단 (준비 중)', desc: '이 자산의 순수익은 얼마이고 어디서 새는가. 출시를 준비하고 있는 진단입니다.' },

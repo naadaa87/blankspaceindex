@@ -89,11 +89,11 @@ module.exports = (entry) => {
         </a>
         <div class="next-card" style="cursor:default;">
           <span class="chip chip--muted">지수 상세의 미리보기로 안내</span>
-          <b>공실 원인 · 영업 가능성 · 적합성 평가</b>
+          <b>공실 수익화 · 업종 영업 허가신청</b>
           <p>세 지수는 각 상세 페이지의 결과 화면 미리보기로 핵심 지면을 확인하실 수 있고, 풀 샘플은 순차적으로 이 자리에 더해집니다.</p>
           <span class="art-card__meta" style="border:0;padding:0;">
-            <a href="/index/vacancy/" style="color:var(--teal);font-weight:600;">공실 원인</a>
-            <a href="/index/business/" style="color:var(--teal);font-weight:600;">영업 가능성</a>
+            <a href="/index/vacancy/" style="color:var(--teal);font-weight:600;">공실 수익화 평가 진단</a>
+            <a href="/index/business/" style="color:var(--teal);font-weight:600;">업종 영업 허가신청 진단</a>
             <a href="/index/smfi/" style="color:var(--teal);font-weight:600;">적합성 평가</a>
           </span>
         </div>

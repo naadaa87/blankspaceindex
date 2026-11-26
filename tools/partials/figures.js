@@ -45,14 +45,14 @@ const assembly = () => {
     <path d="M ${x1} ${y1} C ${x1} ${(y1 + y2) / 2}, ${x2} ${(y1 + y2) / 2}, ${x2} ${y2 - 8}" fill="none" stroke="#9DB4AE" stroke-width="1.6"/>
     <path d="M ${x2 - 4.5} ${y2 - 10} L ${x2} ${y2 - 2} L ${x2 + 4.5} ${y2 - 10} Z" fill="#9DB4AE"/>`;
   return `
-<svg viewBox="0 0 560 262" role="img" aria-label="적정임대료 진단과 영업 가능성 확인의 결과를 공실 원인 진단이 입력으로 사용하는 연동 구조" style="width:100%;height:auto;display:block;">
+<svg viewBox="0 0 560 262" role="img" aria-label="적정임대료 진단과 업종 영업 허가신청 진단의 결과를 공실 수익화 평가 진단이 입력으로 사용하는 연동 구조" style="width:100%;height:auto;display:block;">
   ${box(28, 22, 156, '적정임대료 진단', 'SRVI 2.1', '#FFFFFF', '#E4E8EA', '#1D2327')}
-  ${box(202, 22, 156, '영업 가능성 확인', 'SCPI 1.1', '#FFFFFF', '#E4E8EA', '#1D2327')}
+  ${box(202, 22, 156, '업종 영업 허가신청 진단', 'SCPI 1.1', '#FFFFFF', '#E4E8EA', '#1D2327')}
   ${box(376, 22, 156, '공간수익화 적합성 평가', 'SMFI 2.1', '#FFFFFF', '#E4E8EA', '#1D2327')}
   ${arrow(106, 80, 216, 128)}
   ${arrow(280, 80, 280, 128)}
   ${arrow(454, 80, 344, 128)}
-  ${box(170, 130, 220, '공실 원인 진단', 'SVDI 1.1 · 어셈블리 지수', '#0F6B63', '#0B554E', '#FFFFFF')}
+  ${box(170, 130, 220, '공실 수익화 평가 진단', 'SVDI 1.1 · 어셈블리 지수', '#0F6B63', '#0B554E', '#FFFFFF')}
   <text x="280" y="222" text-anchor="middle" font-family="Pretendard Variable, sans-serif" font-size="12.5" fill="#64707A">가격의 간극, 법규의 결격, 모델 적합도가 원인 축의 증거로 흘러 들어옵니다</text>
   <line x1="150" y1="238" x2="410" y2="238" stroke="#E4E8EA" stroke-width="1"/>
 </svg>`;

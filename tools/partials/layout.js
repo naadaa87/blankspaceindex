@@ -62,10 +62,10 @@ const mobileMenu = () => {
 };
 
 const footer = () => {
-  const availableLinks = INDEXES.filter((i) => i.status === 'available')
+  const availableLinks = INDEXES.filter((i) => i.status === 'available' && i.listed !== false)
     .map((i) => `<li><a href="/index/${i.slug}/">${i.name}</a></li>`)
     .join('');
-  const preparingLinks = INDEXES.filter((i) => i.status === 'preparing')
+  const preparingLinks = INDEXES.filter((i) => i.status === 'preparing' && i.listed !== false)
     .map((i) => `<li><a class="is-preparing" href="/index/${i.slug}/">${i.name}</a></li>`)
     .join('');
   return `
