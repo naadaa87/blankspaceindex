@@ -16,7 +16,7 @@ const SITE = {
   tel: '010-2384-9580',
   /* 검색엔진 소유 확인 — 콘솔에서 받은 content 값만 넣으면 메타태그가 자동 삽입된다 */
   verify: {
-    google: '',   // Google Search Console  (HTML 태그 방식의 content 값)
+    google: 'BFFRm8qTCkfFCzNMSsWlwtTSMtULh06Sn-CLL7LxYBg',   // Google Search Console (2026-11-26 등록)
     naver: '',    // 네이버 서치어드바이저   (HTML 태그 방식의 content 값)
   },
   biz: {
