@@ -17,7 +17,7 @@ const SITE = {
   /* 검색엔진 소유 확인 — 콘솔에서 받은 content 값만 넣으면 메타태그가 자동 삽입된다 */
   verify: {
     google: 'BFFRm8qTCkfFCzNMSsWlwtTSMtULh06Sn-CLL7LxYBg',   // Google Search Console (2026-11-26 등록)
-    naver: '',    // 네이버 서치어드바이저   (HTML 태그 방식의 content 값)
+    naver: '98376f5c072aafe12306b54cbf875e82be1f957a',    // 네이버 서치어드바이저 (2026-11-26 등록)
   },
   biz: {
     company: '주식회사 블랭크',
