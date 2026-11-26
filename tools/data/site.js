@@ -10,9 +10,24 @@ const SITE = {
   tagline: '공간의 가치를, 데이터로 진단합니다.',
   system: '공간·상업용 부동산 통합 평가 체계',
   by: '공백 · 주식회사 블랭크',
-  origin: 'https://index.vacancy.co.kr',
+  origin: 'https://blankspaceindex.com',
   companySite: 'https://vacancy.co.kr',
   email: 'spaceblank0100@gmail.com',
+  tel: '010-2384-9580',
+  /* 검색엔진 소유 확인 — 콘솔에서 받은 content 값만 넣으면 메타태그가 자동 삽입된다 */
+  verify: {
+    google: '',   // Google Search Console  (HTML 태그 방식의 content 값)
+    naver: '',    // 네이버 서치어드바이저   (HTML 태그 방식의 content 값)
+  },
+  biz: {
+    company: '주식회사 블랭크',
+    ceo: '최시준',
+    /* 사업자등록번호·통신판매업 신고번호·주소는 값이 확정되는 대로 아래에 채운다.
+       빈 문자열이면 푸터가 '표기 예정' 문구로 대체한다 (전자상거래법 표기 의무 대비). */
+    regNo: '',
+    mailOrderNo: '',
+    address: '',
+  },
   desc: '공실 원인 진단부터 적정임대료, 영업 가능성, 공간수익화 적합성 평가까지 — 10년의 실행 경험으로 설계한 공간·상업용 부동산 평가 체계. 모든 결과에 근거와 한계를 함께 적습니다.',
   shortDesc: '공간의 가치를, 데이터로 진단합니다',
 };

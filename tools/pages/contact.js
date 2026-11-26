@@ -1,5 +1,5 @@
 /**
- * 문의 — 6.10절. 서버 접수 폼과 접수 번호는 정식 오픈과 함께 제공되며,
+ * 문의 — 6.10절. 서버 접수 폼과 접수 번호는 2차 오픈에서 제공되며,
  * 지금은 용건별 이메일 템플릿으로 받는다.
  */
 const { SITE } = require('../data/site');
@@ -13,7 +13,7 @@ module.exports = (entry) => {
     <div class="container">
       <p class="eyebrow">문의</p>
       <h1 class="h-display" style="font-size:clamp(30px,3.8vw,44px);">궁금한 것을<br>그대로 보내 주세요</h1>
-      <p class="hero__sub" style="max-width:640px;">용건에 맞는 갈래를 고르시면 제목과 항목이 채워진 메일이 열립니다. 영업일 1일 안에 회신드리며, 화면에서 바로 접수되는 폼과 접수 번호는 정식 오픈과 함께 제공됩니다.</p>
+      <p class="hero__sub" style="max-width:640px;">용건에 맞는 갈래를 고르시면 제목과 항목이 채워진 메일이 열립니다. 영업일 1일 안에 회신드리며, 화면에서 바로 접수되는 폼과 접수 번호는 2차 오픈에서 더해집니다.</p>
     </div>
   </section>
 

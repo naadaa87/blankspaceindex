@@ -1,3 +1,23 @@
-# SMFI 사이트 이관 시 여기에 301 리다이렉트를 추가합니다 (보충자료 3.2절 매핑표)
-# 예) smfi.vacancy.co.kr 이관은 해당 프로젝트의 _redirects 또는 Bulk Redirects에서 처리
-# /old-path  /new-path  301
+# ─────────────────────────────────────────────────────────────
+# BLANK SPACE INDEX — 리디렉션
+# 정규 주소는 https://blankspaceindex.com (www 없음)
+# ─────────────────────────────────────────────────────────────
+
+# 1) www → apex : 같은 문서가 두 주소로 노출되지 않게 한 곳으로 모은다
+https://www.blankspaceindex.com/*  https://blankspaceindex.com/:splat  301
+
+# 2) 배포 미리보기 주소 → 정규 주소 : 검색엔진의 중복 색인 방지
+https://blankspaceindex.pages.dev/*  https://blankspaceindex.com/:splat  301
+
+# 3) 구 SMFI 사이트 경로 매핑 — 해당 도메인을 이 프로젝트로 연결할 경우 그대로 동작한다
+/index.html         /                        301
+/why.html           /index/smfi/             301
+/methodology.html   /trust/methodology/      301
+/service.html       /products/deep/          301
+/references.html    /works/                  301
+/sample.html        /samples/                301
+/operator.html      /company/                301
+/partners.html      /b2b/                    301
+/self-check.html    /index/smfi/check/       301
+/faq.html           /faq/                    301
+/apply.html         /apply/                  301

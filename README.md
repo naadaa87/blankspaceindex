@@ -3,7 +3,7 @@
 공간·상업용 부동산 통합 평가 체계 **BLANK SPACE INDEX**의 공개 사이트입니다.
 「홈페이지 제작기획·기능명세·제작지시서 v1.0」과 보충자료를 기준 문서로 제작되었습니다.
 
-- 배포 대상: `index.vacancy.co.kr` (권고안 — 제작지시서 1.3절)
+- 배포 대상: `blankspaceindex.com` (정규 주소 · www는 apex로 301)
 - 스택: 빌드 도구 없는 순수 HTML/CSS/JS + Cloudflare Pages (기존 vacancy.co.kr·smfi-console과 동일 구성)
 - 디자인 기준: **Modern Proptech Intelligence 무드보드(Candidate 2)** — Off-White `#F7F8F6` · Graphite `#2B2F33` · Teal `#0F6B63` · Green `#16A34A`, Pretendard 산세리프 체계. 섹션 레이아웃은 제공된 섹션 시안(히어로·사례·현장·B2B 등)을 코드로 재현했습니다.
 - 사진 자산: `public/assets/img/photos/`의 webp는 제공된 디자인 시안 이미지에서 크롭·최적화한 것입니다.
@@ -58,18 +58,28 @@
    > 됩니다. 결과는 같습니다.
 
 3. **커스텀 도메인 연결**
-   - 프로젝트 → *Custom domains* → `index.vacancy.co.kr` 추가
+   - 프로젝트 → *Custom domains* → `blankspaceindex.com` 과 `www.blankspaceindex.com` 추가
    - vacancy.co.kr 존이 이미 Cloudflare에 있으므로 CNAME이 자동 구성되고 SSL이 발급됩니다.
 
 4. **이후 갱신** — `main`에 푸시하면 자동 배포됩니다.
 
-## 오픈 전 확정 필요 항목 (본문에 자리 표시됨)
+## 오픈 상태 (2026-11-26 정식 공개)
 
-- [ ] 푸터 사업자 정보: 사업자등록번호 · 통신판매업 신고번호 · 주소 (오픈 절차 1번)
-- [ ] 법적 문서 4종의 법률 검토 반영과 시행일 표기 (오픈 절차 2번)
-- [ ] Standard 결제(PG)·계정·마이페이지 — Pages Functions + D1 단계에서 연동 (본편 제3부)
-- [ ] 문의 폼 서버 접수(Functions) — 현재는 이메일 안내로 대체
-- [ ] 서치콘솔·네이버 서치어드바이저 등록, OG 노출 확인 (오픈 절차 9번)
+- [x] 도메인 `blankspaceindex.com` 정규화 — sitemap·robots·canonical·OG·JSON-LD·RSS·security.txt 일괄 반영
+- [x] 푸터 사업자 표기: 상호·대표·연락처 (등록번호·통신판매업 신고번호·주소는 결제 개시에 맞춰 추가)
+- [x] 법적 문서 4종 v1.0 시행일 2026-11-26 게시
+- [x] 가격 단일 원천 `tools/data/pricing.js` — 금액은 이 파일 한 곳에서 관리
+- [ ] 온라인 결제(PG)·계정·마이페이지 — 2차 오픈 (Pages Functions + D1)
+- [ ] 문의 폼 서버 접수(Functions) — 현재는 이메일 접수로 운영
+- [ ] 통신판매업 신고 후 푸터 `SITE.biz` 값 채우기
+
+### 가격을 바꾸려면
+`tools/data/pricing.js`의 `price` 값만 숫자로 바꾸고 `node tools/build.js`.
+`null`이면 '상담 후 견적 안내'로 자동 표기되므로, 금액을 지어내지 않는 구조입니다.
+
+### 검색엔진 소유 확인
+`tools/data/site.js`의 `SITE.verify.google` / `SITE.verify.naver`에 콘솔에서 받은
+content 값을 넣으면 메타태그가 자동 삽입됩니다.
 
 ## 제작 단계 현황
 

@@ -1,9 +1,10 @@
 /**
  * 상품·가격 — 제작지시서 6.4절
  * 시작: 내 상황에 맞는 상품 찾기(3버튼) → 즉시 시작(Standard 3) → 케이스형 → 준비 중 → 공제 절(#credit)
- * 가격 원칙: Standard 3종은 확정가 표기(현재 가격 확정 중 — 정직 표기), 케이스형은 견적 구조.
+ * 가격 원칙: Standard 3종은 확정가 표기, 케이스형은 견적 구조. 금액은 tools/data/pricing.js 한 곳에서 관리한다.
  */
 const { NOTICES } = require('../data/site');
+const { PRICING, label } = require('../data/pricing');
 
 const P = (cls, inner) => `<div class="prod ${cls || ''}">${inner}</div>`;
 
@@ -40,17 +41,17 @@ module.exports = (entry) => {
       <p class="lead">세 지수의 Standard는 결제 후 즉시 계산되어 결과지가 발행됩니다. 결제액은 같은 지수의 Pro 전환 시 전액 공제됩니다.</p></div>
       <div class="prod-grid">
         ${[
-          ['공실 원인 진단', 'SVDI 1.1', '공실을 갖고 있어요', '원인 후보 최대 2개 + 확인 순서 + 이번 주 할 일. 결과지 4면.', '9문항 · 5분 · 즉시 발행', '/index/vacancy/'],
-          ['적정임대료 진단', 'SRVI 2.1', '공실 · 재계약 국면', '시장 밴드 위의 내 위치 + 판정 + 등가 조합 + 3가격점. 결과지 5면(신뢰도 충족 시).', '7문항 · 5분 · 즉시 발행', '/index/rent/'],
-          ['영업 가능성 확인', 'SCPI 1.1', '계약·창업을 앞두고 있어요', '8관문 신호등 + 업종 매트릭스 + 확인 필요 항목과 관할 질문. 결과지 5면.', '2+α문항 · 3분 · 즉시 발행', '/index/business/'],
+          ['공실 원인 진단', 'SVDI 1.1', '공실을 갖고 있어요', '원인 후보 최대 2개 + 확인 순서 + 이번 주 할 일. 결과지 4면.', '9문항 · 5분 · 즉시 발행', '/index/vacancy/', 'vacancy'],
+          ['적정임대료 진단', 'SRVI 2.1', '공실 · 재계약 국면', '시장 밴드 위의 내 위치 + 판정 + 등가 조합 + 3가격점. 결과지 5면(신뢰도 충족 시).', '7문항 · 5분 · 즉시 발행', '/index/rent/', 'rent'],
+          ['영업 가능성 확인', 'SCPI 1.1', '계약·창업을 앞두고 있어요', '8관문 신호등 + 업종 매트릭스 + 확인 필요 항목과 관할 질문. 결과지 5면.', '2+α문항 · 3분 · 즉시 발행', '/index/business/', 'business'],
         ]
           .map(
-            ([name, code, sit, desc, terms, href]) => P(
+            ([name, code, sit, desc, terms, href, key]) => P(
               'reveal',
               `<div class="prod__head"><span class="chip">Standard</span><h3 class="h2">${name}</h3><span class="code-tag">${code}</span></div>
                <span class="prod__sit">${sit}</span>
                <p class="prod__desc">${desc}</p>
-               <div class="prod__price"><b>확정가 결제</b><small>가격 확정 중 — 정식 오픈과 함께 게시됩니다</small></div>
+               <div class="prod__price"><b>${label(PRICING.standard[key]).main}</b><small>${label(PRICING.standard[key]).sub}</small></div>
                <div class="prod__foot"><span class="prod__terms">${terms}</span>
                  <span class="prod__btns"><a class="btn btn--ghost btn--sm" href="${href}">자세히</a><a class="btn btn--primary btn--sm" href="/apply/#pro">시작하기</a></span></div>`
             )
@@ -68,17 +69,17 @@ module.exports = (entry) => {
       <p class="lead">규모와 범위에 따른 견적 구조입니다. 표준 범위는 신청 즉시, 건물 단위·복수 호실은 영업일 1일 안에 견적을 안내드립니다.</p></div>
       <div class="prod-grid">
         ${[
-          ['전문가 진단 Pro', '지수별', '자료를 제출받아 검증하고, 담당 평가자가 검토·서명해 발행합니다. 협상·설득 자리에 쓸 수 있는 문서입니다.', '영업일 3~5일 · 검토자 서명', '/apply/#pro', '문의하기'],
-          ['공간수익화 본 평가', 'SMFI 2.1', '5단계 파이프라인 전체를 수행하는 본 평가입니다. 모델별 적합도와 4등급 판정, 경제성 검증까지.', '범위 협의 · 심층 리포트', '/index/smfi/', '상담하기'],
-          ['현장 점검', 'P5', '일곱 개 영역 약 100개 항목을 실측·촬영합니다. 원격의 확인 불가 항목이 여기서 확정됩니다.', '방문 후 영업일 5일 · 사진 증빙', '/products/onsite/', '사전 신청'],
-          ['종합 심층 리포트', 'P6', '전 지수와 시나리오, 실행 계획까지 — 제본 리포트와 대면 보고가 포함된 최상위 구성입니다.', '영업일 10일 · 제본 + 대면 보고', '/products/deep/', '자세히'],
+          ['전문가 진단 Pro', '지수별', '자료를 제출받아 검증하고, 담당 평가자가 검토·서명해 발행합니다. 협상·설득 자리에 쓸 수 있는 문서입니다.', '영업일 3~5일 · 검토자 서명', '/apply/#pro', '문의하기', PRICING.pro.vacancy],
+          ['공간수익화 본 평가', 'SMFI 2.1', '5단계 파이프라인 전체를 수행하는 본 평가입니다. 모델별 적합도와 4등급 판정, 경제성 검증까지.', '범위 협의 · 심층 리포트', '/index/smfi/', '상담하기', PRICING.case.smfiStandard],
+          ['현장 점검', 'P5', '일곱 개 영역 약 100개 항목을 실측·촬영합니다. 원격의 확인 불가 항목이 여기서 확정됩니다.', '방문 후 영업일 5일 · 사진 증빙', '/products/onsite/', '사전 신청', PRICING.case.onsite],
+          ['종합 심층 리포트', 'P6', '전 지수와 시나리오, 실행 계획까지 — 제본 리포트와 대면 보고가 포함된 최상위 구성입니다.', '영업일 10일 · 제본 + 대면 보고', '/products/deep/', '자세히', PRICING.case.deep],
         ]
           .map(
-            ([name, code, desc, terms, href, cta]) => P(
+            ([name, code, desc, terms, href, cta, pr]) => P(
               'prod--case reveal',
               `<div class="prod__head"><span class="chip chip--green">케이스형</span><h3 class="h2">${name}</h3><span class="code-tag">${code}</span></div>
                <p class="prod__desc">${desc}</p>
-               <div class="prod__price"><b>규모·범위 기준 견적</b><small>표준 범위 즉시 · 그 외 영업일 1일 내 안내</small></div>
+               <div class="prod__price"><b>${label(pr).main}</b><small>${label(pr).sub}</small></div>
                <div class="prod__foot"><span class="prod__terms">${terms}</span>
                  <span class="prod__btns"><a class="btn btn--primary btn--sm" href="${href}">${cta}</a></span></div>`
             )
@@ -122,7 +123,7 @@ module.exports = (entry) => {
           <thead><tr><th style="width:26%;">구간</th><th>공제 내용</th><th style="width:30%;">적용</th></tr></thead>
           <tbody>
             <tr><th scope="row">Standard → Pro</th><td>같은 지수의 전문가 진단으로 전환하면 Standard 결제액이 <b>전액</b> 공제됩니다.</td><td>결제 화면 자동 반영</td></tr>
-            <tr><th scope="row">진단 → 프로젝트</th><td>블랭크와 개선·시공·운영 프로젝트를 계약하면 그동안의 유료 진단 비용이 계약 금액에서 공제됩니다.</td><td>상담 시 조건 안내</td></tr>
+            <tr><th scope="row">진단 → 프로젝트</th><td>블랭크와 개선·시공·운영 프로젝트를 계약하면 그동안의 유료 진단 비용이 계약 금액에서 ${PRICING.credit.toProject ? `<b>${PRICING.credit.toProject}</b> ` : ''}공제됩니다.</td><td>상담 시 조건 안내</td></tr>
           </tbody>
         </table>
       </div>

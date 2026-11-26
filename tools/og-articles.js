@@ -31,7 +31,7 @@ const wrap = (t, n) => { // 단순 2줄 래핑
 ${lines.map((L,i)=>`<text x="72" y="${300+i*84}" font-family="Pretendard,'Apple SD Gothic Neo',sans-serif" font-size="62" font-weight="700" letter-spacing="-1.5" fill="#1D2327">${esc(L)}</text>`).join('')}
 <text x="72" y="${300+lines.length*84+8}" font-family="Pretendard,'Apple SD Gothic Neo',sans-serif" font-size="22" fill="#64707A">${esc(a.summary.slice(0,44))}…</text>
 <rect x="72" y="522" width="1056" height="1.5" fill="#E4E8EA"/>
-<text x="72" y="566" font-family="Archivo,Arial" font-size="16" font-weight="600" letter-spacing="2" fill="#A9B1B7">INDEX.VACANCY.CO.KR</text>
+<text x="72" y="566" font-family="Archivo,Arial" font-size="16" font-weight="600" letter-spacing="2" fill="#A9B1B7">BLANKSPACEINDEX.COM</text>
 <text x="1128" y="566" font-family="Pretendard,sans-serif" font-size="16" fill="#64707A" text-anchor="end">읽는 시간 ${a.read}</text>
 </svg>`;
     await sharp(Buffer.from(svg)).png().toFile(path.join(out, a.slug + '.png'));

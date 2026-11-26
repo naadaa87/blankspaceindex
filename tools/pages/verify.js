@@ -1,7 +1,7 @@
 /**
  * 리포트 진위 확인 — 발행 번호 체계와 조회 절차
- * 신용평가·인증 기관의 verify 관행을 따른다. 조회 시스템은 정식 오픈과 함께
- * 활성화되며, 그 전까지는 규격 안내와 이메일 대조 창구를 제공한다.
+ * 신용평가·인증 기관의 verify 관행을 따른다. 온라인 조회 시스템은 결제·계정 기능과 함께 2차로 열리며,
+ * 그 전까지는 규격 안내와 이메일 대조 창구를 제공한다.
  */
 const { SITE } = require('../data/site');
 
@@ -43,7 +43,7 @@ module.exports = (entry) => {
               <input class="wiz__input" type="text" name="no" placeholder="예) BSI-SRVI-2609-0184" autocomplete="off" aria-label="발행 번호">
               <button class="btn btn--primary" type="submit">조회하기</button>
             </form>
-            <p class="verify-note" data-verify-note>온라인 조회는 정식 오픈과 함께 활성화됩니다. 지금은 아래 이메일 대조 창구를 이용해 주세요.</p>
+            <p class="verify-note" data-verify-note>온라인 조회 시스템은 준비 중입니다. 지금은 아래 이메일 대조 창구로 보내 주시면 영업일 1일 안에 발행 사실을 확인해 드립니다.</p>
             <div class="verify-alt">
               <p>급한 확인이 필요하시면 문서 사진(또는 발행 번호)과 함께 보내 주세요. 영업일 1일 안에 발행 사실을 회신드립니다.</p>
               <a class="btn btn--ghost" href="mailto:${SITE.email}?subject=${encodeURIComponent('[진위 확인] 발행 번호 대조 요청')}">이메일로 대조 요청</a>

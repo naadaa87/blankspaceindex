@@ -1,4 +1,5 @@
 Contact: mailto:spaceblank0100@gmail.com
 Preferred-Languages: ko, en
-Policy: https://index.vacancy.co.kr/legal/notice/
+Canonical: https://blankspaceindex.com/.well-known/security.txt
+Policy: https://blankspaceindex.com/legal/notice/
 Expires: 2027-12-31T00:00:00.000Z

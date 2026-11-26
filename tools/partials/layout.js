@@ -73,7 +73,7 @@ const footer = () => {
     <div class="container">
       <div class="footer-tagline">
         <p>${SITE.tagline}</p>
-        <span class="code-tag">index.vacancy.co.kr</span>
+        <span class="code-tag">blankspaceindex.com</span>
       </div>
       <div class="footer-grid">
         <div class="footer-brand">
@@ -116,7 +116,15 @@ const footer = () => {
       <div class="footer-legal">
         <p><strong>감정평가와의 구분</strong> — ${NOTICES.appraisal}</p>
         <p>${NOTICES.disclaimer}</p>
-        <p style="margin-top:10px;color:#6B7774;">사업자 정보(사업자등록번호·통신판매업 신고번호·주소)는 정식 오픈 시점에 이 자리에 표기됩니다.</p>
+        <p class="footer-biz">
+          <span><b>상호</b> ${SITE.biz.company}</span>
+          <span><b>대표</b> ${SITE.biz.ceo}</span>
+          <span><b>문의</b> ${SITE.tel} · <a href="mailto:${SITE.email}">${SITE.email}</a></span>
+          ${SITE.biz.regNo ? `<span><b>사업자등록번호</b> ${SITE.biz.regNo}</span>` : ''}
+          ${SITE.biz.mailOrderNo ? `<span><b>통신판매업</b> ${SITE.biz.mailOrderNo}</span>` : ''}
+          ${SITE.biz.address ? `<span><b>주소</b> ${SITE.biz.address}</span>` : ''}
+        </p>
+        ${SITE.biz.regNo && SITE.biz.mailOrderNo ? '' : '<p style="margin-top:8px;color:#6B7774;">사업자등록번호·통신판매업 신고번호·주소는 온라인 결제 개시에 맞춰 이 자리에 표기됩니다. 현재는 모든 신청을 이메일로 접수합니다.</p>'}
       </div>
       <div class="footer-bottom">
         <span>© <span data-year>2026</span> BLANK Inc. · BLANK SPACE INDEX</span>
@@ -158,6 +166,8 @@ const layout = (page) => {
 <link rel="stylesheet" href="/assets/css/style.css">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"BLANK SPACE INDEX","alternateName":"주식회사 블랭크 · 공백","url":"${SITE.origin}","logo":"${SITE.origin}/assets/img/apple-touch-icon.png","email":"${SITE.email}","sameAs":["${SITE.companySite}"]}</script>
 <link rel="alternate" type="application/rss+xml" title="BLANK SPACE INDEX 자료실" href="/rss.xml">
+    ${SITE.verify.google ? `<meta name="google-site-verification" content="${SITE.verify.google}">` : ''}
+    ${SITE.verify.naver ? `<meta name="naver-site-verification" content="${SITE.verify.naver}">` : ''}
     ${page.crumbs ? `<script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: page.crumbs.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.title, item: SITE.origin + c.path })) })}</script>` : ''}
     ${page.extraHead || ''}
 </head>
