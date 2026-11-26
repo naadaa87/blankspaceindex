@@ -9,6 +9,7 @@ const { INDEXES, BADGES, PICTOGRAMS } = require('../data/registry');
 const { CONTENT, SOURCES } = require('../data/index-content');
 const { SITE, NOTICES } = require('../data/site');
 const { PRICING, label } = require('../data/pricing');
+const SEO = require('./seo');
 const { pipeline } = require('./figures');
 
 const badgeBtn = (key) => {
@@ -391,20 +392,27 @@ module.exports = function renderIndexDetail(entry, slug) {
     </div>
   </section>`;
 
-  const ldService = c.preparing ? null : {
-    '@context': 'https://schema.org', '@type': 'Service',
-    name: ix.name, serviceType: '상업용 공간 진단',
+  /* ── 검색·답변 엔진용 구조화 데이터 ──
+     가격은 pricing.js에서 그대로 읽어 Offer로 노출한다. 금액이 없으면 Offer를 만들지 않는다. */
+  const offerList = c.preparing ? [] : [
+    PRICING.standard[slug] && { ...PRICING.standard[slug], name: 'Standard · 셀프 진단' },
+    PRICING.pro[slug] && { ...PRICING.pro[slug], name: 'Pro · 전문가 진단' },
+    ...(ix.tiers || []).filter((t) => t.price[0] === 'case').map((t) => ({ ...PRICING.case[t.price[1]], name: t.label })),
+  ].filter(Boolean);
+
+  const ldService = c.preparing ? null : SEO.service({
+    name: ix.name,
     description: ix.oneLiner,
-    provider: { '@type': 'Organization', name: '주식회사 블랭크 · BLANK SPACE INDEX' },
-    areaServed: 'KR', url: SITE.origin + entry.path,
-  };
-  const ldBc = {
-    '@context': 'https://schema.org', '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: '지수 체계', item: SITE.origin + '/about-index/' },
-      { '@type': 'ListItem', position: 2, name: ix.name, item: SITE.origin + entry.path },
-    ],
-  };
+    path: entry.path,
+    offers: offerList,
+  });
+  const ldBc = SEO.breadcrumb([
+    { name: '홈', path: '/' },
+    { name: '지수 체계', path: '/about-index/' },
+    { name: ix.name, path: entry.path },
+  ]);
+  const ldFaq = (c.faqs && c.faqs.length) ? SEO.faqPage(c.faqs.map((f) => [f.q, f.a])) : null;
+
   return {
     path: entry.path,
     title: `${ix.name} — ${ix.question}`,
@@ -412,6 +420,6 @@ module.exports = function renderIndexDetail(entry, slug) {
     ogTitle: `${ix.name} · ${SITE.name}`,
     body,
     bodyClass: `page-index page-index-${slug}`,
-    extraHead: `${ldService ? `<script type="application/ld+json">${JSON.stringify(ldService)}</script>` : ''}<script type="application/ld+json">${JSON.stringify(ldBc)}</script>`,
+    extraHead: `${ldService ? SEO.ld(ldService) : ''}${SEO.ld(ldBc)}${ldFaq ? SEO.ld(ldFaq) : ''}`,
   };
 };

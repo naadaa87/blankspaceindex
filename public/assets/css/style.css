@@ -1493,3 +1493,10 @@ select.wiz__input { appearance: none; background-image: linear-gradient(45deg, t
   .ladder__row { grid-template-columns: 1fr; gap: 12px; }
   .ladder__price { justify-items: start; text-align: left; }
 }
+
+/* 글 리드 — 답변 엔진이 인용할 핵심 요약 */
+.article__lead {
+  font-size: 18px !important; line-height: 1.8 !important; color: var(--ink) !important;
+  font-weight: 600; padding: 18px 22px; background: var(--off-white);
+  border-left: 3px solid var(--teal); border-radius: 0 10px 10px 0; margin-bottom: 30px !important;
+}

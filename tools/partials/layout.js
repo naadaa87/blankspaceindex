@@ -5,6 +5,7 @@
  */
 const { SITE, NAV, CTA, NOTICES } = require('../data/site');
 const { INDEXES } = require('../data/registry');
+const SEO = require('./seo');
 
 const esc = (s = '') =>
   String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -164,8 +165,9 @@ const layout = (page) => {
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/pretendard/woff2-dynamic-subset/PretendardVariable.subset.0.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/style.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"BLANK SPACE INDEX","alternateName":"주식회사 블랭크 · 공백","url":"${SITE.origin}","logo":"${SITE.origin}/assets/img/apple-touch-icon.png","email":"${SITE.email}","sameAs":["${SITE.companySite}"]}</script>
+${SEO.ld(SEO.organization())}${SEO.ld(SEO.website())}
 <link rel="alternate" type="application/rss+xml" title="BLANK SPACE INDEX 자료실" href="/rss.xml">
+    <link rel="alternate" type="text/plain" title="llms.txt — AI 크롤러용 사이트 요약" href="/llms.txt">
     ${SITE.verify.google ? `<meta name="google-site-verification" content="${SITE.verify.google}">` : ''}
     ${SITE.verify.naver ? `<meta name="naver-site-verification" content="${SITE.verify.naver}">` : ''}
     ${page.crumbs ? `<script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: page.crumbs.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.title, item: SITE.origin + c.path })) })}</script>` : ''}

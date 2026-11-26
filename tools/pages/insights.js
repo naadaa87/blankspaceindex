@@ -2,6 +2,7 @@
  * 자료실 허브 — 6.8절. 창간 5편으로 시작.
  */
 const { ARTICLES } = require('../data/articles');
+const SEO = require('../partials/seo');
 
 module.exports = (entry) => {
   const body = `
@@ -18,7 +19,7 @@ module.exports = (entry) => {
       <div class="art-grid">
         ${ARTICLES.map(
           (a) => `<a class="art-card reveal" href="/insights/${a.slug}/">
-          <span class="lbl" style="color:var(--teal);">창간 ${a.no}</span>
+          <span class="lbl" style="color:var(--teal);">${a.section || '자료실'}</span>
           <h2 class="h2">${a.title}</h2>
           <p>${a.summary}</p>
           <span class="art-card__meta"><span class="num">${a.date}</span><span>${a.read}</span><span class="index-card__cta">읽기</span></span>
@@ -29,5 +30,11 @@ module.exports = (entry) => {
     </div>
   </section>`;
 
-  return { path: entry.path, title: entry.title, description: entry.desc, body, bodyClass: 'page-insights' };
+  const ldList = SEO.itemList(ARTICLES.map((a) => ({ path: `/insights/${a.slug}/`, title: a.title })), entry.path);
+  const ldBc = SEO.breadcrumb([{ name: '홈', path: '/' }, { name: '자료실', path: '/insights/' }]);
+  return {
+    path: entry.path, title: entry.title, description: entry.desc, body,
+    bodyClass: 'page-insights',
+    extraHead: `${SEO.ld(ldList)}${SEO.ld(ldBc)}`,
+  };
 };

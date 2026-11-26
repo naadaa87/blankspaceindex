@@ -3,35 +3,38 @@
  */
 const { ARTICLES } = require('../data/articles');
 const { SITE } = require('../data/site');
+const SEO = require('./seo');
 
 module.exports = function renderArticle(entry, slug) {
   const a = ARTICLES.find((x) => x.slug === slug);
   const others = ARTICLES.filter((x) => x.slug !== slug).slice(0, 2);
-  const ld = {
-    '@context': 'https://schema.org', '@type': 'Article',
-    headline: a.title, description: a.summary, datePublished: '2026-08-01',
-    author: { '@type': 'Organization', name: '주식회사 블랭크 · BLANK SPACE INDEX' },
-    publisher: { '@type': 'Organization', name: SITE.name },
-    mainEntityOfPage: SITE.origin + entry.path,
-  };
-  const bc = {
-    '@context': 'https://schema.org', '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: '자료실', item: SITE.origin + '/insights/' },
-      { '@type': 'ListItem', position: 2, name: a.title, item: SITE.origin + entry.path },
-    ],
-  };
+  const plain = a.body.replace(/<[^>]+>/g, ' ');
+  const ldArticle = SEO.article({
+    title: a.title, description: a.summary, path: entry.path,
+    date: a.date + '-01', modified: a.modified || (a.date + '-01'),
+    keywords: a.keywords || [], image: `/assets/img/og/${a.slug}.png`,
+    wordCount: plain.replace(/\s+/g, '').length, section: a.section || '공실과 임대',
+  });
+  ldArticle.speakable = SEO.speakable(['.article__lead', '.article__body > p:first-of-type']);
+  const ldBc = SEO.breadcrumb([
+    { name: '홈', path: '/' },
+    { name: '자료실', path: '/insights/' },
+    { name: a.title, path: entry.path },
+  ]);
+  const ldFaq = (a.faqs && a.faqs.length) ? SEO.faqPage(a.faqs.map((f) => [f.q, f.a])) : null;
+
   const body = `
   <article class="article">
     <header class="dhero article__hero">
       <div class="container" style="max-width:820px;">
-        <p class="eyebrow">자료실 · 창간 ${a.no}</p>
+        <p class="eyebrow">자료실 · ${a.section || "기록"}${a.no ? " · 창간 " + a.no : ""}</p>
         <h1 class="h-display" style="font-size:clamp(28px,3.4vw,40px);">${a.title}</h1>
         <p class="article__meta"><span>${a.date}</span><span>읽는 시간 ${a.read}</span><span>BLANK SPACE INDEX</span></p>
       </div>
     </header>
     <div class="section section--alt" style="padding-top:64px;">
       <div class="container article__body">
+        <p class="article__lead">${a.summary}</p>
         ${a.body}
         ${a.sources.length ? `<div class="article__src"><span class="lbl">통계 출처</span><ul>${a.sources.map((s) => `<li>${s}</li>`).join('')}</ul></div>` : ''}
         <div class="article__cta">
@@ -54,6 +57,6 @@ module.exports = function renderArticle(entry, slug) {
     ogTitle: `${a.title} — ${SITE.name} 자료실`,
     body, bodyClass: 'page-article',
     ogImage: `/assets/img/og/${a.slug}.png`,
-    extraHead: `<script type="application/ld+json">${JSON.stringify(ld)}</script><script type="application/ld+json">${JSON.stringify(bc)}</script>`,
+    extraHead: `${SEO.ld(ldArticle)}${SEO.ld(ldBc)}${ldFaq ? SEO.ld(ldFaq) : ''}`,
   };
 };

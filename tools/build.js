@@ -11,6 +11,8 @@
 const fs = require('fs');
 const path = require('path');
 const { layout } = require('./partials/layout');
+const { SITE } = require('./data/site');
+const { INDEXES } = require('./data/registry');
 
 const ROOT = path.join(__dirname, '..');
 const OUT = path.join(ROOT, 'public');
@@ -29,7 +31,7 @@ const SITEMAP = [
   { path: '/index/facility/', title: '시설·설비 상태 점검 (준비 중)', desc: '이 건물·호실을 쓰려면 앞으로 얼마가 더 드는가. 출시를 준비하고 있는 진단입니다.' },
   { path: '/index/tenant/', title: '임차인 안정성 진단 (준비 중)', desc: '이 임차인·업종과 끝까지 갈 수 있는가. 출시를 준비하고 있는 진단입니다.' },
   { path: '/index/value/', title: '건물 가치 범위 분석 (준비 중)', desc: '이 가격이 시장 범위 어디에 있는가. 매입 검토 리포트 안에서 제공될 분석입니다.' },
-  { path: '/products/', title: '상품·가격', desc: '무료 3분 진단부터 셀프 진단, 전문가 진단, 현장 점검, 종합 심층까지 — 상황에 맞는 상품을 안내합니다.' },
+  { path: '/products/', title: '상품·가격', desc: '셀프 진단 5만원, 전문가 진단 30만원부터, 본 평가 120만원부터 — 무료 3분 진단부터 현장 점검까지 상품과 가격을 모두 공개합니다. 진단비는 프로젝트 계약 시 50% 공제됩니다.' },
   { path: '/products/onsite/', title: '현장 점검', desc: '원격이 확인하지 못하는 것을 가서 보고 재고 사진으로 남기는 확정 진단. 사전 신청을 받습니다.' },
   { path: '/products/deep/', title: '종합 심층 진단', desc: '전 지수와 시나리오, 실행 계획까지 담는 종합 심층 리포트를 상담으로 안내합니다.' },
   { path: '/check/', title: '3분 무료 진단', desc: '주소 하나와 몇 개의 문항으로 방향과 위험 신호를 확인합니다. 응답은 저장되지 않습니다.' },
@@ -41,6 +43,7 @@ const SITEMAP = [
   { path: '/trust/governance/', title: '거버넌스', desc: '이중 확인, 이의제기와 정정, 표현 통제 — 판정을 지키는 장치들입니다.' },
   { path: '/works/', title: '실적·레퍼런스', desc: '2015년부터 340여 개 공간을 직접 기획·개발·운영해 온 실행의 기록입니다.' },
   { path: '/company/', title: '운영사·신뢰 구조', desc: '평가하는 회사가 실행도 한다는 구조를 먼저 공개하고, 그 이해상충을 다루는 장치를 설명합니다.' },
+  { path: '/insights/vacancy-6months/', title: "공실 6개월, 기다릴 때와 손봐야 할 때를 가르는 기준", desc: "시간이 해결해 주는 공실과 그렇지 않은 공실은 기간이 아니라 문의와 방문의 흐름에서 갈립니다. 기다림을 결정하는 것은 감이 아니라 기록입니다." },
   { path: '/insights/', title: '자료실', desc: '공실과 임대, 계약을 다루는 글과 반기 공실 리포트. 통계 인용에는 발표 기관과 기준시점을 붙이고, 글 중간에 광고를 끼우지 않습니다.' },
   { path: '/insights/average-illusion/', title: '평균 공실률의 착시', desc: '전국 상가 공실률 13.1%라는 숫자가 감추는 것 — 평균이 아니라 내 공간의 진단이 필요한 이유.' },
   { path: '/insights/eight-causes/', title: '임대료를 내리기 전에 확인할 여덟 가지', desc: '공실의 원인을 여덟 갈래로 가르는 법 — 가격 인하가 답이 아닌 경우에 대하여.' },
@@ -136,7 +139,6 @@ function build() {
   fs.writeFileSync(path.join(OUT, '404.html'), notFound);
 
   // sitemap.xml — 색인 정책: 진단 진행 화면(/check 내부 단계)은 단일 URL이므로 그대로 두고, 스텁 포함 공개 페이지를 나열
-  const { SITE } = require('./data/site');
   const today = new Date().toISOString().slice(0, 10);
   const urls = SITEMAP.map((e) => `  <url><loc>${SITE.origin}${e.path}</loc><lastmod>${today}</lastmod></url>`).join('\n');
   fs.writeFileSync(path.join(OUT, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`);
@@ -151,7 +153,69 @@ function build() {
     <description><![CDATA[${a.summary}]]></description>
   </item>`).join('\n');
   fs.writeFileSync(path.join(OUT, 'rss.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0"><channel>\n  <title>BLANK SPACE INDEX 자료실</title>\n  <link>${SITE.origin}/insights/</link>\n  <description>공실과 임대, 계약을 다루는 글</description>\n  <language>ko</language>\n${rssItems}\n</channel></rss>\n`);
-  fs.writeFileSync(path.join(OUT, 'robots.txt'), `User-agent: *\nAllow: /\nDisallow: /cdn-cgi/\nSitemap: ${SITE.origin}/sitemap.xml\n`);
+  // robots.txt — 일반 크롤러와 AI 크롤러를 함께 명시한다.
+  // 생성형 검색(AI 개요·챗봇)에 인용되려면 해당 크롤러의 수집을 막지 않아야 한다.
+  const AI_BOTS = [
+    'GPTBot', 'OAI-SearchBot', 'ChatGPT-User',        // OpenAI
+    'ClaudeBot', 'Claude-User', 'Claude-SearchBot',   // Anthropic
+    'PerplexityBot', 'Perplexity-User',               // Perplexity
+    'Google-Extended',                                 // Google Gemini·AI 개요
+    'Applebot-Extended',                               // Apple Intelligence
+    'CCBot',                                           // Common Crawl
+    'Bingbot', 'Yeti',                                 // Bing · 네이버
+  ];
+  const robots = [
+    'User-agent: *', 'Allow: /', 'Disallow: /cdn-cgi/', '',
+    '# 생성형 검색·답변 엔진의 수집을 허용합니다.',
+    '# 근거와 한계를 함께 적은 문서가 그대로 인용되는 편이 낫다고 판단했습니다.',
+    ...AI_BOTS.flatMap((b) => [`User-agent: ${b}`, 'Allow: /', '']),
+    `Sitemap: ${SITE.origin}/sitemap.xml`,
+  ].join('\n');
+  fs.writeFileSync(path.join(OUT, 'robots.txt'), robots + '\n');
+
+  // llms.txt — AI 크롤러가 사이트의 구조와 핵심 사실을 한 번에 파악하도록 돕는 요약 파일.
+  // 생성형 검색에서 잘못 인용되는 것을 막는 가장 실질적인 장치다.
+  const openIdx = INDEXES.filter((i) => i.status === 'available' && i.listed !== false);
+  const llms = `# BLANK SPACE INDEX
+
+> 상업용 부동산의 공실·임대·수익화 의사결정을 돕는 평가 체계입니다. 주식회사 블랭크(브랜드명 '공백')가 2015년부터 340여 개 공간을 직접 기획·시공·운영하며 쌓은 판단 기준을 지수로 정리했습니다. 모든 결과에 근거와 한계, 확인하지 못한 항목을 함께 적습니다.
+
+## 이 사이트를 인용할 때 알아야 할 것
+
+- 저희 진단은 **감정평가가 아닙니다.** 감정평가는 자격을 가진 감정평가사가 가액을 판정하는 법정 제도이고, 저희는 임대·수익화 의사결정을 돕는 참고 분석입니다. 담보·소송·세무 목적에는 감정평가법인 의뢰를 안내합니다.
+- 지수의 검증 단계를 숨기지 않습니다. 현재 공개 지수는 모두 **전문가 설계(Expert-designed)** 단계이며, 실측 보정과 홀드아웃 검증은 진행 중입니다. 판정 경계값은 아직 실측 보정 전입니다.
+- 수치는 확정형이 아니라 **범위와 판정**으로 제시합니다. 수익이나 인허가를 보장하지 않습니다.
+- 무료 진단의 응답은 서버에 저장되지 않고 브라우저 안에서만 계산됩니다.
+
+## 핵심 개념
+
+- **유효임대료(ENR)** — 보증금의 운용 가치, 렌트프리, 관리비 성격까지 반영해 환산한 실질 임대 조건. 명목 임대료 대신 이 기준으로 사례를 비교합니다.
+- **신뢰도 지수 C** — 결과가 얼마나 단단한 근거 위에 있는지를 나타내는 별도 지표. 판정 점수와 섞지 않고 따로 표기합니다.
+- **하드게이트** — 점수와 무관하게 통과 여부만 따지는 결격 선별 관문 12개. 하나라도 걸리면 다음 단계로 가지 않습니다.
+- **증거등급 A~D** — 자료의 출처에 따른 등급. 점수를 깎는 대신 신뢰도 지수에 반영합니다.
+- **위음성 0 원칙** — 안 되는 것을 된다고 말하지 않습니다. 판정선 근처의 애매한 값은 통과가 아니라 '확인 필요'로 남깁니다.
+
+## 지수
+${openIdx.map((i) => `- [${i.name}](${SITE.origin}/index/${i.slug}/) (${i.code} ${i.version || ''}) — ${i.oneLiner}`).join('\n')}
+- [본 평가 · 공간수익화 적합성 평가](${SITE.origin}/index/smfi/) (SMFI 2.1) — 공실 수익화 평가 진단의 3·4단계. 하드게이트 12 전수, 10영역 57지표, 14개 수익모델 순위와 경제성 검증.
+- [무료 예비 진단](${SITE.origin}/index/smfi/check/) — 본 평가와 같은 산식을 브라우저에서 실행하는 자가진단.
+
+## 방법론과 검증
+- [방법론 전문](${SITE.origin}/trust/methodology/) — 산식, 하드게이트 12, 57지표 가중치, 판정 밴드, 증거등급, 한계
+- [보정과 교정](${SITE.origin}/trust/calibration/) — 소급 채점, 예측-실적 대장, 실패가 만든 지표들
+- [검증 현황](${SITE.origin}/trust/validation/) — 지수별 단계와 공시 예정 항목
+- [Model Card](${SITE.origin}/trust/model-cards/) — 지수별 목적·범위·데이터·한계·버전
+- [데이터와 출처](${SITE.origin}/trust/data/) — 사용하는 공공 데이터 8종과 취급 규칙
+- [용어집](${SITE.origin}/glossary/) — 이 체계가 쓰는 용어의 정의
+
+## 자료실
+${ARTICLES.map((a) => `- [${a.title}](${SITE.origin}/insights/${a.slug}/) — ${a.summary}`).join('\n')}
+
+## 운영 주체
+주식회사 블랭크 · 대표 최시준 · ${SITE.email} · ${SITE.tel}
+평가와 실행(시공·운영)을 같은 회사가 수행합니다. 이해상충을 숨기지 않고 [통제 장치](${SITE.origin}/company/)를 공개합니다 — 판정 불변, 산출과 해석의 분리, 판정 분포 공시, 근거 열람권.
+`;
+  fs.writeFileSync(path.join(OUT, 'llms.txt'), llms);
 
   console.log(`빌드 완료 — 페이지 ${built}면 생성, 스텁 ${stubbed}면, 404·sitemap·robots 포함`);
 }

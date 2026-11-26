@@ -116,6 +116,31 @@ content 값을 넣으면 메타태그가 자동 삽입됩니다.
 - 변경은 반드시 `/trust/revisions/`(개정 이력)에 한 줄을 남기고, 근거는 `/trust/calibration/`의 절차를 따릅니다.
 - 산식: `Sj = 0.30·B + 0.45·Mj + 0.25·Ej − Pj` (B 공통 기반 · M 모델 적합 · E 경제성 · P 감점)
 
+## 검색·생성엔진 최적화 (SEO · GEO · AEO)
+
+- `tools/partials/seo.js` 가 구조화 데이터의 단일 원천입니다.
+  Organization · WebSite · Service+Offer(가격) · FAQPage · Article · BreadcrumbList · ItemList · speakable.
+- **가격이 Offer로 노출**됩니다. `pricing.js` 금액이 그대로 검색엔진에 전달되므로, 가격을 바꾸면 마크업도 같이 바뀝니다.
+- `public/llms.txt` 는 빌드가 자동 생성합니다. 생성형 검색(AI 개요·챗봇)이 사이트를 잘못 인용하지 않도록
+  핵심 개념 정의, 감정평가와의 구분, 검증 단계를 먼저 적어 둡니다.
+- `robots.txt` 는 GPTBot·ClaudeBot·PerplexityBot·Google-Extended 등 AI 크롤러를 명시적으로 허용합니다.
+- 후기·평점 마크업은 쓰지 않습니다. 실체 없는 구조화 데이터는 넣지 않는다는 원칙입니다.
+
+## 매일 글 발행 — 자동화
+
+매일 오후 1시에 예약 작업이 돌면서 `tools/data/content-plan.js` 의 미발행 주제를 위에서부터 하나 집어 글로 만듭니다.
+
+```
+node tools/new-article.js <글.json>
+```
+
+이 스크립트가 articles.js 삽입 · SITEMAP 추가 · 페이지 모듈 생성 · OG 이미지 · 빌드 · 감사를 한 번에 처리합니다.
+같은 slug 가 이미 있으면 중단하므로 중복 발행이 나지 않고, 금지 표현·허용 태그·최소 분량(900자)을 검사해
+기준에 맞지 않으면 발행을 막습니다.
+
+**주제를 추가하려면** `content-plan.js` 배열에 객체 하나를 더하면 됩니다. 각 주제에는 타깃 고객, 실제 검색어,
+그리고 그 글이 끝까지 밀고 갈 논지(angle)를 함께 적습니다 — 논지가 없으면 쓰지 않는다는 규칙입니다.
+
 ## 운영 가이드 — 콘텐츠와 개정의 루틴
 
 이 사이트는 "데이터 한 곳 → 여러 화면 자동 반영" 구조입니다. 자주 하게 될 작업의 손잡이는 다음과 같습니다.
