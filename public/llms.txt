@@ -33,6 +33,7 @@
 - [용어집](https://blankspaceindex.com/glossary/) — 이 체계가 쓰는 용어의 정의
 
 ## 자료실
+- [문의가 아예 없는 공실과, 보러는 오는데 안 되는 공실](https://blankspaceindex.com/insights/inquiry-zero/) — 문의가 0인 공실과 방문은 있는 공실은 막힌 지점이 다릅니다. 두 유형을 가르는 질문 하나와, 각각에 필요한 확인 순서를 정리했습니다.
 - [공실 6개월, 기다릴 때와 손봐야 할 때를 가르는 기준](https://blankspaceindex.com/insights/vacancy-6months/) — 시간이 해결해 주는 공실과 그렇지 않은 공실은 기간이 아니라 문의와 방문의 흐름에서 갈립니다. 기다림을 결정하는 것은 감이 아니라 기록입니다.
 - [평균 공실률의 착시](https://blankspaceindex.com/insights/average-illusion/) — 전국 상가 공실률 13.1%라는 숫자가 감추는 것 — 평균이 아니라 내 공간의 진단이 필요한 이유에 대하여.
 - [임대료를 내리기 전에 확인할 여덟 가지](https://blankspaceindex.com/insights/eight-causes/) — 공실의 원인은 가격 하나가 아닙니다. 가격·물리·설비·법규·상권·계약·노출·관리 — 여덟 갈래를 먼저 갈라야 하는 이유.
